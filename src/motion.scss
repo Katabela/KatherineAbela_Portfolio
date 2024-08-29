@@ -1,0 +1,69 @@
+// .gallery-video {
+//   display: grid;
+//   grid-template-columns: auto auto;
+//   gap: 30px;
+//   height: 100%;
+// }
+
+// .gallery-video .card-video {
+//   min-height: 500px;
+//   position: relative;
+//   // background-color: rgb(235, 235, 235);
+// }
+
+// .video1 {
+//   background: url(folio-images/Need_You.mov) center center / contain no-repeat;
+// }
+// .video2 {
+//   background: url(folio-images/WSUSA.mp4) center center / contain no-repeat;
+// }
+// .video3 {
+//   background: url(folio-images/Nightmare.mov) center center / contain no-repeat;
+// }
+// .video4 {
+//   background: url(folio-images/cake.mp4) center center / contain no-repeat;
+// }
+// .video5 {
+//   background: url(folio-images/interview-with-a-vampire.mov) center center / contain no-repeat;
+// }
+// .video6 {
+//   background: url(folio-images/Nightmare.mov) center center / contain no-repeat;
+// }
+
+.gallery-video {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+  gap: 50px;
+  padding: 20px;
+}
+
+.card-video {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.card-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-text {
+  text-align: left;
+}
+
+.video-text p {
+  font-size: medium;
+  padding: 10px;
+  max-width: 70%;
+}
+
+.video1,
+.video2,
+.video3,
+.video4,
+.video5,
+.video6 {
+  border: 3px solid #fff; /* optional border styling */
+}

@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --black: black;
+  --royal-blue: #035dff;
+  --white: white;
+  --pink: #ffb4ce;
+  --yellow: #fff460;
+  --tomato: #ff6541;
+  --greyed-out: rgba(0, 0, 0, 0.24);
+  --pale-turquoise: #9ef3f3;
+  --magenta: #ff59ff;
+}
+
+body {
+  background-color: #ffffff;
+  animation: fadeInAnimation ease 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.navbar {
+  padding-left: 20px;
+}
+
+.navbar-brand-img {
+  transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.navbar-brand-img:hover {
+  transform: scale(1.05);
+  box-shadow: 3px 3px #000;
+  border: #000 solid 1.5px;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+h1 {
+  padding: 10px;
+  font-size: 4em;
+  color: rgb(54, 54, 54);
+}
+
+h2 {
+  padding: 0 0 30px 0;
+}
+
+main {
+  margin: 0 auto;
+  padding: 5rem 5rem 5rem 7rem;
+  max-width: 1500px;
+  text-align: center;
+}
+
+.folio-type {
+  display: inline;
+  padding: 2rem;
+}
+
+p {
+  font-size: 40px;
+}
+
+.folio-medium {
+  padding-bottom: 3rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  height: 100%;
+}
+
+.gallery .card {
+  min-height: 500px;
+  position: relative;
+  transition: all 1s;
+  transform-style: preserve-3d;
+  // background-color: rgb(235, 235, 235);
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+  // border: #000 solid 2px;
+  // border-radius: 27px;
+  border: none;
+}
+
+.front {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.back {
+  background-color: rgb(68, 68, 68);
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: rotateY(180deg);
+  display: grid;
+  place-items: center;
+  color: white;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 25px;
+}
+
+.image1.front {
+  background: url(folio-images/Alumni-sticker1.png) center center / contain
+    no-repeat;
+}
+.image2.front {
+  background: url(folio-images/EAST-WeberState.png) center center / contain
+    no-repeat;
+}
+.image3.front {
+  background: url(folio-images/chance3.jpg) center center / cover;
+}
+.image4.front {
+  background: url(folio-images/Mission_Statement.png) center center / contain
+    no-repeat;
+}
+.image5.front {
+  background: url(folio-images/Mural-final.jpg) center center / contain
+    no-repeat;
+}
+.image6.front {
+  background: url(folio-images/mac-\ A\ life\ aint\ a\ life.png) center center /
+    cover;
+}
+.image7.front {
+  background: url(folio-images/10-SIGNS.png) center center / contain no-repeat;
+}
+.image8.front {
+  background: url(folio-images/weber-shirt-retro0.png) center center / contain
+    no-repeat;
+}
+.image9.front {
+  background: url(folio-images/WSUSA-Shirt.png) center center / cover;
+}
+.image10.front {
+  background: url(folio-images/FLL-TShirt_design-2024.png) center center / cover;
+}
+.image11.front {
+  background: url(folio-images/house2.jpg) center center / cover;
+}
+.image12.front {
+  background: url(folio-images/HHM-TV-DISPLAY.jpg) center center / cover;
+}
+
+.image13.front {
+  background: url(folio-images/IMG_3865.jpg) center center / cover;
+}
+
+.image14.front {
+  background: url(folio-images/naacp-logo1.png) center center / contain
+    no-repeat;
+}
+
+.image15.front {
+  background: url(folio-images/naacp-shirt3.png) center center / contain
+    no-repeat;
+}
+
+.image16.front {
+  background: url(folio-images/parking-pass1-02.jpg) center center / contain
+    no-repeat;
+}
+
+.image17.front {
+  background: url(folio-images/roller-disco-A-frame-27_x40_.jpg) center center /
+    contain no-repeat;
+}
+
+.image18.front {
+  background: url(folio-images/Screen\ Shot\ 2023-09-26\ at\ 2.14.45\ PM.png)
+    center center / cover;
+}
+
+.image19.front {
+  background: url(folio-images/summer_camp_instaPosts-01.png) center center /
+    cover;
+}
+
+.image20.front {
+  background: url(folio-images/summer_camp_instaPosts-05.png) center center /
+    cover;
+}
+
+.image21.front {
+  background: url(folio-images/summer_camp_instaPosts-09.png) center center /
+    cover;
+}
+
+.image22.front {
+  background: url(folio-images/summer_camp_instaPosts-13.png) center center /
+    cover;
+}
+
+.image23.front {
+  background: url(folio-images/summer_camp_instaPosts-17.png) center center /
+    cover;
+}
+
+.image24.front {
+  background: url(folio-images/WSU_Coffee.png) center center / cover;
+}
+
+.image25.front {
+  background: url(folio-images/postcard2.jpg) center center / cover;
+}
+
+.image26.front {
+  background: url(folio-images/slayground_.png) center center / contain
+    no-repeat;
+}
+
+.image27.front {
+  background: url(folio-images/simple-logo-circle2.png) center center / cover;
+}
+
+.image28.front {
+  background: url(folio-images/Rap1.jpg) center center / contain no-repeat;
+}
+
+.image29.front {
+  background: url(folio-images/Rap2.jpg) center center / contain no-repeat;
+}
+
+.image30.front {
+  background: url(folio-images/Rap5.jpg) center center / contain no-repeat;
+}
+
+.image31.front {
+  background: url(folio-images/Rap6.jpg) center center / contain no-repeat;
+}
+
+.image32.front {
+  background: url(folio-images/Rap3.jpg) center center / contain no-repeat;
+}
+
+.image33.front {
+  background: url(folio-images/Rap4.jpg) center center / contain no-repeat;
+}
+
+.image34.front {
+  background: url(folio-images/Rap7.jpg) center center / contain no-repeat;
+}
+
+.image35.front {
+  background: url(folio-images/Rap8.jpg) center center / contain no-repeat;
+}
+
+.image36.front {
+  background: url(folio-images/Rap9.jpg) center center / contain no-repeat;
+}
+
+.image37.front {
+  background: url(folio-images/Rap8.jpg) center center / contain no-repeat;
+}
