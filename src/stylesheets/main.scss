@@ -38,12 +38,12 @@ header h4 {
 /* Splash Screen */
 .intro {
   position: fixed;
-  z-index: 500;
+  z-index: 3000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100vh;
-  background-color: #0082f3;
+  background-color: #fff460;
   transition: 2s;
 }
 
@@ -335,7 +335,7 @@ a {
 
 .section.is--about {
   padding: 10%;
-  margin-top: 5em;
+  margin-top: 0;
   background-color: var(--royal-blue);
   position: relative;
 }
@@ -343,6 +343,43 @@ a {
 .section.is--work {
   border-top: 1.1px solid #000;
   position: relative;
+}
+
+.navbar-home {
+  z-index: 2000;
+  margin: 0;
+  position: absolute;
+  background-color: #035dff;
+  padding: 2%;
+  width: 100%;
+}
+
+.navbar-collapse {
+  display: flex !important;
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  display: flex;
+}
+
+.navbar-nav .nav-link {
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #07294e;
+  color: white;
+}
+
+.nav-item .highlight {
+  color: #ffcc00; /* Change to the desired highlight color */
+  font-weight: bold;
+}
+
+.nav-item.active .highlight {
+  border-bottom: 2px solid #ffcc00; /* Example of underline for active page */
 }
 
 .nav {
@@ -392,12 +429,15 @@ a {
 }
 
 .hero__photos {
+  background-color: #ffcedf;
   z-index: 2;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: -1em;
+  margin-top: 2em;
   display: flex;
   position: relative;
+  border-radius: 150px 150px 20px 20px;
+  border: solid black;
 }
 
 .hero__small-img-contain {
@@ -407,12 +447,12 @@ a {
 }
 
 .hero__large-img-contain {
-  z-index: 4;
+  z-index: 1;
   position: relative;
 }
 
 .hero__img1 {
-  width: 42em;
+  width: 60em;
   height: 40em;
   margin-top: -5em;
   margin-left: -8em;
@@ -426,8 +466,8 @@ a {
 }
 
 .hero__img2 {
-  width: 35em;
-  height: 50em;
+  width: 40em;
+  height: 40em;
   position: relative;
   background-color: white;
   border: 1.2px solid #000;
@@ -445,8 +485,8 @@ a {
 .hero__img3 {
   width: 35em;
   height: 40em;
-  margin-top: -7em;
-  margin-right: -7em;
+  margin-top: 4em;
+  margin-right: -9em;
   position: absolute;
   top: 0%;
   bottom: auto;
@@ -464,8 +504,8 @@ a {
 .hero__img4 {
   width: 20em;
   height: 40em;
-  margin-top: -7em;
-  margin-right: 14.5em;
+  margin-top: -1em;
+  margin-right: 16em;
   position: absolute;
   top: 0%;
   bottom: auto;
@@ -486,7 +526,7 @@ a {
 }
 
 .hero__img3:hover {
-  transform: scale(0.9);
+  transform: scale(0.9) rotate(-5deg);
   translate: 10px;
   filter: drop-shadow(7px 7px black);
 }
@@ -822,7 +862,7 @@ a {
 }
 
 .about-text {
-  padding: 10%;
+  padding: 10% 10% 15% 10%;
 }
 
 .about-text p {

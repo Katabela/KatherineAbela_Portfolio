@@ -21,17 +21,47 @@
 
     <div class="overflow">
       <div class="global">
-        <section class="section is--hero" id="content">
-          <div class="container is--hero">
-            <div class="hero__title">
-              <h1 class="fade-up tricks">Katherine<br /></h1>
-              <h1 class="fade-up tricks">Abela</h1>
+        <nav class="navbar-home navbar-expand-lg">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#about"
+                >About Me<span class="highlight"></span
+              ></a>
+              <a class="nav-item nav-link" href="folio.html">Design Folio</a>
+              <a class="nav-item nav-link" href="resume.pdf">Resume</a>
+              <a class="nav-item nav-link" href="#contact">Contact</a>
             </div>
+          </div>
+        </nav>
+        <!-- About Me Section -->
+        <section class="section is--hero" id="content">
+          <section class="section is--about">
+            <div class="about-text">
+              <h2>Hi, I’m Kat,</h2>
+              <p>a passionate<span> </span></p>
+              <p>
+                dedicated to crafting intuitive and impactful digital
+                experiences.
+              </p>
+              <div class="underline"></div>
+            </div>
+
             <div class="hero__photos">
               <div class="hero__small-img-contain is--one">
                 <div class="hero__img1">
-                  <a href="#contact">
-                    <img src="./images/phone2.png" />
+                  <a href="folio.html">
+                    <img src="./images/folio.png" />
                   </a>
                 </div>
               </div>
@@ -55,26 +85,17 @@
                   alt=""
                   class="hero__star1"
                 /><img
-                  src="https://assets-global.website-files.com/5fc3edc939e45606bb1beaed/5fc5bd55a881e97f9c0ea6c6_hero-small-shape.svg"
-                  loading="lazy"
-                  data-w-id="b525270d-e581-4043-2dd4-80e759b1adae"
-                  alt=""
-                  class="hero__shape2"
-                /><img
                   src="https://assets-global.website-files.com/5fc3edc939e45606bb1beaed/5fc5bd55289f5713c1684ca5_hero-large-shape.svg"
                   loading="lazy"
                   data-w-id="39234a07-65c4-7224-2183-52376e1c9ae4"
                   alt=""
                   class="hero__shape1"
                 />
-                <div class="hero__img2">
-                  <img src="./images/me.png" />
-                </div>
               </div>
               <div class="hero__small-img-contain is--two">
                 <div class="hero__img3">
-                  <a href="#work">
-                    <img src="./images/book-03.png" />
+                  <a href="#contact">
+                    <img src="./images/phone.png" />
                   </a>
                 </div>
                 <div class="hero__img4">
@@ -84,8 +105,7 @@
                 </div>
               </div>
             </div>
-            <div class="hero__bottom"></div>
-          </div>
+          </section>
         </section>
 
         <div class="back-to-top">
@@ -105,258 +125,12 @@
             </svg>
           </a>
         </div>
-
-        <!-- Section Work -->
-
-        <section class="section is--work" id="work">
-          <div class="row">
-            <div class="column-1">
-              <img src="./images/pin.png" alt="" />
-            </div>
-            <div class="column-2">
-              <img src="./images/pin.png" alt="" />
-            </div>
-          </div>
-          <div class="titles hidden">
-            <h2>Projects.</h2>
-            <div class="underline"></div>
-            <!-- <h4>Web design & development</h4> -->
-            <!-- <div class="underline"></div> -->
-          </div>
-
-          <!-- Folio Section -->
-
-          <section class="section is-folio" id="folio">
-            <div class="titles hidden">
-              <h4 class="work-header titles hidden">Graphic Design</h4>
-            </div>
-
-            <div
-              id="folio-carousel"
-              class="carousel carousel-dark slide"
-              data-ride="carousel"
-            >
-              <ol class="carousel-indicators">
-                <li
-                  data-target="#folio-carousel"
-                  data-slide-to="0"
-                  class="active"
-                ></li>
-                <li data-target="#folio-carousel" data-slide-to="1"></li>
-                <li data-target="#folio-carousel" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active mx-auto">
-                  <img
-                    class="d-block w-100"
-                    src="./images/Folio/EAST-WeberState.png"
-                    alt="First slide"
-                  />
-                </div>
-                <div
-                  id="carousel-item folio-mural mx-auto"
-                  class="carousel-item"
-                >
-                  <img
-                    class="d-block w-100"
-                    src="./images/Folio/mural-final-small.png"
-                    alt="Second slide"
-                  />
-                </div>
-                <div class="carousel-item mx-auto">
-                  <img
-                    class="d-block w-100"
-                    src="./images/Folio/TRUE-WILDCAT-TV_display.png"
-                    alt="Third slide"
-                  />
-                </div>
-              </div>
-              <a
-                class="carousel-control-prev"
-                href="#folio-carousel"
-                role="button"
-                data-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-              </a>
-              <a
-                class="carousel-control-next"
-                href="#folio-carousel"
-                role="button"
-                data-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-              </a>
-            </div>
-
-            <div class="text-center view-all-folio">
-              <button>
-                <a class="folio-button" type="button" href="folio.html"
-                  ><h3>FULL DESIGN PORTFOLIO</h3></a
-                >
-              </button>
-            </div>
-          </section>
-
-          <!-- Folio Section Over -->
-
-          <div id="gallery" class="container is--work">
-            <h4 class="work-header titles hidden">Web design & development</h4>
-            <div class="mobile-scroll">
-              <div class="work__row is--top-row">
-                <div class="work__contain is--top">
-                  <div class="work__wrap w-dyn-list">
-                    <div role="list" class="work__list w-dyn-items">
-                      <div role="listitem" class="work__item w-dyn-item">
-                        <div class="work__img-wide">
-                          <a href="Project5.html">
-                            <img
-                              src="./images/meals.png"
-                              sizes="(max-width: 100%) 50vw, 33vw"
-                              class="full-image"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                      <div role="listitem" class="work__item w-dyn-item">
-                        <div class="work__img-wide">
-                          <a href="Project3.html">
-                            <img
-                              src="./images/Clear.png"
-                              sizes="(max-width: 767px) 85vw, 33vw"
-                              class="full-image"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                      <div role="listitem" class="work__item w-dyn-item">
-                        <div class="work__img-wide">
-                          <a href="Project1.html">
-                            <img
-                              src="./images/LOC.png"
-                              sizes="(max-width: 767px) 85vw, 33vw"
-                              class="full-image"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                      <div role="listitem" class="work__item w-dyn-item">
-                        <div class="work__img-wide">
-                          <a href="Project2.html">
-                            <img
-                              src="./images/Caption.png"
-                              sizes="(max-width: 767px) 85vw, 33vw"
-                              class="full-image"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="gallery" class="container is--work">
-            <h4 class="work-header titles hidden">App design & development</h4>
-            <div class="mobile-scroll">
-              <div class="work__row">
-                <div class="work__contain is--bottom">
-                  <div class="work__wrap w-dyn-list">
-                    <div role="list" class="work__list w-dyn-items">
-                      <div role="listitem" class="work__item w-dyn-item">
-                        <div class="work__img-wide">
-                          <a href="Project6.html">
-                            <img
-                              src="./images/MealHero.png"
-                              sizes="(max-width: 767px) 85vw, 33vw"
-                              class="full-image"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                      <div role="listitem" class="work__item w-dyn-item">
-                        <div class="work__img-wide">
-                          <a href="Project4.html">
-                            <img
-                              src="./images/Wonderment.png"
-                              sizes="(max-width: 767px) 85vw, 33vw"
-                              class="full-image"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                      <div role="listitem" class="work__item w-dyn-item">
-                        <div class="work__img-wide">
-                          <a href="Project7.html">
-                            <img
-                              src="./images/portfolio.png"
-                              sizes="(max-width: 767px) 85vw, 33vw"
-                              class="full-image"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                      <div role="listitem" class="work__item w-dyn-item">
-                        <div class="work__img-wide">
-                          <a href="Project1.html">
-                            <img
-                              src="./images/LOC.png"
-                              sizes="(max-width: 767px) 85vw, 33vw"
-                              class="full-image"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="column-1">
-              <img src="./images/pin.png" alt="" />
-            </div>
-            <div class="column-2">
-              <img src="./images/pin.png" alt="" />
-            </div>
-          </div>
-        </section>
       </div>
     </div>
 
-    <!-- Work Section Over -->
-
-    <!-- About Me Section -->
-
-    <section class="section is--about" id="about">
-      <div class="titles hidden">
-        <h2>about me.</h2>
-        <div class="underline"></div>
-      </div>
-
-      <div class="about-text">
-        <p>Hi, I’m Kat,</p>
-        <p>a passionate<span> </span></p>
-        <p>
-          dedicated to crafting intuitive and impactful digital experiences.
-        </p>
-        <div class="underline"></div>
-      </div>
-    </section>
-
     <section class="is--about2">
       <div class="message">
-        <div class="message-box">
+        <div class="message-box" id="about">
           <p>
             Born and bred in the vibrant streets of Melbourne, I traded
             kangaroos for mountain views when I migrated to Utah four years
@@ -610,8 +384,14 @@
       <div class="social hidden">
         <h2 class="socials-text">socials.</h2>
         <div class="socials-grid">
-          <div class="socials-grid-item"><i class="bi bi-facebook"></i></div>
-          <div class="socials-grid-item"><i class="bi bi-instagram"></i></div>
+          <div class="socials-grid-item">
+            <a href=""><i class="bi bi-facebook"></i></a>
+          </div>
+          <div class="socials-grid-item">
+            <a href="https://www.instagram.com/katabela/"
+              ><i class="bi bi-instagram"></i
+            ></a>
+          </div>
           <div class="socials-grid-item"><i class="bi bi-github"></i></div>
         </div>
       </div>
