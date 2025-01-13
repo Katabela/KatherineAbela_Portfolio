@@ -43,6 +43,36 @@
   padding: 0;
 }
 
+// LINK //
+.web-folio-links {
+  color: #008080; /* Teal color for the link text */
+  text-decoration: none; /* Remove the underline by default */
+  font-weight: bold; /* Make the text bold */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover state */
+.web-folio-links:hover {
+  background-color: #39dfdf;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  text-decoration: underline; /* Add underline to indicate interactivity */
+  transition: 0.3s;
+}
+
+/* Focus state (for accessibility) */
+.web-folio-links:focus {
+  color: #004c4c; /* Even darker teal for focus */
+  outline: 2px dashed #66cccc; /* Teal outline to highlight focus */
+  text-decoration: underline;
+}
+
+/* Visited state */
+.web-folio-links:visited {
+  color: #005959; /* Subtle variation for visited links */
+}
+
 // HERO IMAGE //
 .container2 {
   background-image: url("../images/LOC.png");

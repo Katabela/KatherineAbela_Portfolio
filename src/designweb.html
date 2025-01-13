@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <head>
-      <meta charset="utf-8" />
-      <title>Design Work - KA</title>
-      <link rel="icon" href="./images/logo.png" />
-      <meta content="Portfolio" name="description" />
-      <link rel="stylesheet" href="./stylesheets/main.scss" />
-      <link rel="stylesheet" href="./folio.scss" />
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
-      />
-    </head>
+    <meta charset="utf-8" />
+    <title>Design Work - KA</title>
+    <link rel="icon" href="./images/logo.png" />
+    <meta content="Portfolio" name="description" />
+    <link rel="stylesheet" href="./stylesheets/main.scss" />
+    <link rel="stylesheet" href="./folio.scss" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 5%;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar">
@@ -58,118 +65,85 @@
       </div>
 
       <section>
-        <div id="gallery" class="container is--work">
-          <h4 class="work-header titles hidden">Web design & development</h4>
-          <div class="mobile-scroll">
-            <div class="work__row is--top-row">
-              <div class="work__contain is--top">
-                <div class="work__wrap w-dyn-list">
-                  <div role="list" class="work__list w-dyn-items">
-                    <div role="listitem" class="work__item w-dyn-item">
-                      <div class="work__img-wide">
-                        <a href="Project5.html">
-                          <img
-                            src="./images/meals.png"
-                            sizes="(max-width: 100%) 50vw, 33vw"
-                            class="full-image"
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div role="listitem" class="work__item w-dyn-item">
-                      <div class="work__img-wide">
-                        <a href="Project3.html">
-                          <img
-                            src="./images/Clear.png"
-                            sizes="(max-width: 767px) 85vw, 33vw"
-                            class="full-image"
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div role="listitem" class="work__item w-dyn-item">
-                      <div class="work__img-wide">
-                        <a href="Project1.html">
-                          <img
-                            src="./images/LOC.png"
-                            sizes="(max-width: 767px) 85vw, 33vw"
-                            class="full-image"
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div role="listitem" class="work__item w-dyn-item">
-                      <div class="work__img-wide">
-                        <a href="Project2.html">
-                          <img
-                            src="./images/Caption.png"
-                            sizes="(max-width: 767px) 85vw, 33vw"
-                            class="full-image"
-                          />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <h5 class="web-folio">Web Design & Development</h5>
+        <div class="grid-container work__contain">
+          <div class="work__item">
+            <div class="work__img-wide">
+              <a href="https://empactathletics.netlify.app" target="_blank">
+                <img src="./images/empact.png" alt="Project 5" />
+              </a>
+            </div>
+          </div>
+
+          <div class="work__item">
+            <div class="work__img-wide">
+              <a href="Project1.html" target="_blank">
+                <img src="./images/LOC.png" alt="Project 1" />
+              </a>
+            </div>
+          </div>
+          <div class="work__item">
+            <div class="work__img-wide">
+              <a
+                href="https://lively-snickerdoodle-7831ce.netlify.app/"
+                target="_blank"
+              >
+                <img src="./images/car.png" alt="Project 2" />
+              </a>
             </div>
           </div>
         </div>
+        <div class="grid-container work__contain">
+          <div class="work__item">
+            <div class="work__img-wide">
+              <a href="Project5.html" target="_blank">
+                <img src="./images/meals.png" alt="Project 5" />
+              </a>
+            </div>
+          </div>
 
-        <div id="gallery" class="container is--work">
-          <h4 class="work-header titles hidden">App design & development</h4>
-          <div class="mobile-scroll">
-            <div class="work__row">
-              <div class="work__contain is--bottom">
-                <div class="work__wrap w-dyn-list">
-                  <div role="list" class="work__list w-dyn-items">
-                    <div role="listitem" class="work__item w-dyn-item">
-                      <div class="work__img-wide">
-                        <a href="Project6.html">
-                          <img
-                            src="./images/MealHero.png"
-                            sizes="(max-width: 767px) 85vw, 33vw"
-                            class="full-image"
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div role="listitem" class="work__item w-dyn-item">
-                      <div class="work__img-wide">
-                        <a href="Project4.html">
-                          <img
-                            src="./images/Wonderment.png"
-                            sizes="(max-width: 767px) 85vw, 33vw"
-                            class="full-image"
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div role="listitem" class="work__item w-dyn-item">
-                      <div class="work__img-wide">
-                        <a href="Project7.html">
-                          <img
-                            src="./images/portfolio.png"
-                            sizes="(max-width: 767px) 85vw, 33vw"
-                            class="full-image"
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div role="listitem" class="work__item w-dyn-item">
-                      <div class="work__img-wide">
-                        <a href="Project1.html">
-                          <img
-                            src="./images/LOC.png"
-                            sizes="(max-width: 767px) 85vw, 33vw"
-                            class="full-image"
-                          />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div class="work__item">
+            <div class="work__img-wide">
+              <a
+                href="https://peaceful-mermaid-ea6dfd.netlify.app/"
+                target="_blank"
+              >
+                <img src="./images/bootstrap.png" alt="Project 1" />
+              </a>
+            </div>
+          </div>
+          <div class="work__item">
+            <div class="work__img-wide">
+              <a href="Project2.html" target="_blank">
+                <img src="./images/Caption.png" alt="Project 2" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h5 class="web-folio">App design & development</h5>
+        <div class="grid-container">
+          <div class="work__item">
+            <div class="work__img-wide">
+              <a href="Project4.html" target="_blank">
+                <img src="./images/Wonderment 2.png" alt="Project 5" />
+              </a>
+            </div>
+          </div>
+          <div class="work__item">
+            <div class="work__img-wide">
+              <a href="Project3.html" target="_blank">
+                <img src="./images/Clear.png" alt="Project 3" />
+              </a>
+            </div>
+          </div>
+          <div class="work__item">
+            <div class="work__img-wide">
+              <a href="Project6.html" target="_blank">
+                <img src="./images/MealHero.png" alt="Project 1" />
+              </a>
             </div>
           </div>
         </div>
