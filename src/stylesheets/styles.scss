@@ -49,6 +49,8 @@
   text-decoration: none; /* Remove the underline by default */
   font-weight: bold; /* Make the text bold */
   transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for hover effects */
+  font-size: 3em;
+  text-align: right;
 }
 
 /* Hover state */
