@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Learnly — Case Study (UX + Backend)</title>
+    <meta
+      name="description"
+      content="Learnly case study: Compliance Training Tracker built with React, Node.js/Express, and MongoDB Atlas. Role-based access, audit-ready storage, and streamlined training management."
+    />
+    <link rel="icon" href="/assets/logo.d449fe31.png" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <!-- <link rel="stylesheet" href="./stylesheets/main.css" /> -->
+    
+    <link rel="stylesheet" href="/assets/overview.17f3c954.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-home">
+      <a class="navbar-brand" href="index.html">KA</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="index.html">Portfolio</a>
+          <a class="nav-item nav-link" href="about.html">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-overview">
+      <img
+        src="/assets/hero-learnly.4de73616.png"
+        alt="Learnly Hero"
+        class="hero-bg"
+      />
+      <div class="hero-overlay">
+        <a href="index.html" class="hero-back" aria-label="Back to portfolio">
+          <i class="bi bi-arrow-left"></i>
+        </a>
+        <div class="hero-content">
+          <h1>Learnly</h1>
+          <p>
+            Compliance Training Tracker — Frontend, Backend, Role-based access.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <main class="case-study">
+      <!-- Left sticky menu -->
+      <aside class="case-menu">
+        <nav>
+          <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#role">Role & Timeline</a></li>
+            <li><a href="#personas">Personas</a></li>
+            <li><a href="#style">Style Guide</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#design">Final Design</a></li>
+            <li><a href="#engineering">Engineering</a></li>
+            <li><a href="#learnings">Key Learnings</a></li>
+            <li><a href="#impact">Impact</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Middle content -->
+      <div class="case-content">
+        <header>
+          <div class="crumbs">Case Study</div>
+          <h1 class="title">Learnly — Compliance Training Tracker</h1>
+          <p class="subtitle">
+            A role-based training management platform ensuring employees
+            complete mandatory compliance sessions. Built with React,
+            Node.js/Express, and MongoDB Atlas. Backend-first approach:
+            structured data, access control, and durable audit-ready storage.
+          </p>
+          <div class="case-cta">
+            <a
+              class="cta"
+              href="https://learnlywsu.netlify.app"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="bi bi-globe2" aria-hidden="true"></i>
+              <span>Open Live App</span>
+            </a>
+            <a
+              class="cta"
+              href="https://www.figma.com/design/argm567xBdqO7crGaXTWcP/Wireframes---Web-4350-2.0?node-id=6-256&t=5XuTbBTtHFahxE3l-1"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="bi bi-easel" aria-hidden="true"></i>
+              <span>View Figma Wireframes</span>
+            </a>
+            <a
+              class="cta"
+              href="https://github.com/ztb42/learnly"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="bi bi-easel" aria-hidden="true"></i>
+              <span>View Github Code</span>
+            </a>
+            <a
+              class="cta"
+              href="https://www.youtube.com/watch?v=3pmcLTxgkzg"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="bi bi-easel" aria-hidden="true"></i>
+              <span>View Presentation Video</span>
+            </a>
+          </div>
+        </header>
+
+        <!-- OVERVIEW -->
+        <section class="section" id="overview">
+          <div class="content">
+            <h2 class="label-heading">Overview</h2>
+            <p>
+              Learnly streamlines compliance training management for
+              organizations. Four user roles (Admin, Manager, Trainer, Employee)
+              ensure secure role-based workflows: admins configure training,
+              managers assign sessions, trainers record completion, and
+              employees enroll/track progress.
+            </p>
+            <h3>Challenge</h3>
+            <p>
+              Compliance training data is often fragmented across spreadsheets,
+              emails, and ad-hoc tools. This creates risk during audits and
+              slows organizational oversight.
+            </p>
+            <h3>Outcome</h3>
+            <p>
+              A centralized, MongoDB-backed app that enforces consistency:
+              training programs, assignments, and completions are all stored in
+              a single source of truth, accessible by role and secured with
+              authentication.
+            </p>
+
+            <div class="row kpis">
+              <div class="col-md-4">
+                <div class="card">
+                  <strong>1 Database</strong><br />
+                  MongoDB Atlas as the single source of truth
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <strong>Audit-Ready</strong><br />
+                  Complete records for compliance checks
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <strong>Role-Based Access</strong><br />
+                  Four roles with tailored permissions
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ROLE & TIMELINE -->
+        <section class="section" id="role">
+          <div class="content">
+            <h2 class="label-heading">Role & Timeline</h2>
+            <div class="dl">
+              <div>Role</div>
+              <div>
+                Project Manager, Database Designer, Full-Stack Developer (ERD,
+                backend architecture, Atlas integration, deployment setup)
+              </div>
+              <div>Timeline</div>
+              <div>
+                ~10 weeks (design sprints, backend-first build, frontend
+                integration)
+              </div>
+              <div>Tools</div>
+              <div>
+                Figma, React, Node.js, Express, MongoDB Atlas, GitHub, Netlify,
+                Vercel
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PERSONAS -->
+        <section class="section" id="personas">
+          <div class="content">
+            <h2 class="label-heading">Personas</h2>
+            <article class="persona">
+              <h4>Maria — HR Manager</h4>
+              <p>
+                <strong>Bio:</strong> Oversees compliance for 120 employees.
+              </p>
+              <p>
+                <strong>Goals:</strong> Assign sessions, track completions,
+                avoid audit fines.
+              </p>
+              <p>
+                <strong>Pain:</strong> Juggling spreadsheets and email
+                reminders.
+              </p>
+              <p>
+                <strong>Fit:</strong> Uses Learnly’s dashboard to assign
+                training and monitor completion rates.
+              </p>
+            </article>
+
+            <article class="persona">
+              <h4>James — Employee</h4>
+              <p>
+                <strong>Bio:</strong> Customer service rep with mandatory yearly
+                training.
+              </p>
+              <p>
+                <strong>Goals:</strong> Easily find and complete required
+                sessions.
+              </p>
+              <p>
+                <strong>Pain:</strong> Forgetting due dates or losing track of
+                PDFs.
+              </p>
+              <p>
+                <strong>Fit:</strong> Accesses Learnly via mobile to view
+                assigned sessions and mark completion.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- STYLE GUIDE -->
+        <section class="section" id="style">
+          <div class="content">
+            <h2 class="label-heading">Style Guide</h2>
+            <p>
+              Professional and minimal UI with clear contrasts for role-based
+              dashboards. Accessibility and readability prioritized.
+            </p>
+            <div class="swatches">
+              <span class="swatch" style="background: #2d16a3"></span>
+              <span class="swatch" style="background: #2563eb"></span>
+              <span class="swatch" style="background: #d8daf4"></span>
+              <span class="swatch" style="background: #f3f4f6"></span>
+              <span class="swatch" style="background: #111827"></span>
+            </div>
+            <p>
+              <strong>Type:</strong> Inter for UI and body text, bold weights
+              for headings.
+            </p>
+          </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="section" id="process">
+          <div class="content">
+            <h2 class="label-heading">Process</h2>
+            <h3>1. Planning</h3>
+            <ul>
+              <li>
+                ERD designed in Lucidchart with collections for Users,
+                Trainings, Sessions, Assignments.
+              </li>
+              <li>
+                Stack selected: MERN (React, Node/Express, MongoDB Atlas).
+              </li>
+              <li>Deployment plan: Netlify (frontend) + Vercel (backend).</li>
+            </ul>
+            <div class="indent-card indent-card--leftpad">
+              <h5 class="process-list">Application Sitemap</h5>
+              <p>High-level navigation for each role and shared routes.</p>
+              <figure class="case-figure">
+                <img
+                  src="/assets/sitemap.860a274d.png"
+                  alt="Learnly Application Sitemap"
+                />
+                <figcaption>
+                  Site map showing role-based sections and public routes.
+                </figcaption>
+              </figure>
+            </div>
+            <h3>2. Backend Build</h3>
+            <ul>
+              <li>
+                Express server with modular routes (users, sessions,
+                assignments).
+              </li>
+              <li>Mongoose models enforcing schema validation.</li>
+              <li>Role-based access control middleware.</li>
+            </ul>
+            <div class="indent-card indent-card--leftpad">
+              <h5 class="process-list">Backend Wireframe</h5>
+              <figure class="case-figure">
+                <img
+                  src="/assets/BackendWireframe.84c8cbcb.png"
+                  alt="Learnly Backend Wireframe"
+                />
+                <figcaption>
+                  Service boundaries, routes, controllers, and middleware.
+                </figcaption>
+              </figure>
+            </div>
+            <h3>3. Database Design</h3>
+            <ul>
+              <li>
+                Express server with modular routes (users, sessions,
+                assignments).
+              </li>
+              <li>Mongoose models enforcing schema validation.</li>
+              <li>Role-based access control middleware.</li>
+            </ul>
+            <div class="indent-card indent-card--leftpad">
+              <h5>Database ERD</h5>
+              <figure class="case-figure">
+                <img src="/assets/erd2.355f2875.png" alt="Learnly Database ERD" />
+                <figcaption>
+                  Users/Roles, TrainingPrograms, TrainingSessions, Assignments,
+                  Enrollments, CompletionStatus (MongoDB schemas via Mongoose).
+                </figcaption>
+              </figure>
+            </div>
+            <h3>4. Frontend Integration</h3>
+            <ul>
+              <li>React UI with dashboards per role.</li>
+              <li>
+                Forms for session creation, assignment, and completion logging.
+              </li>
+            </ul>
+            <div class="indent-card indent-card--leftpad">
+              <h5>Wireframes - High-Fidelity Prototypes</h5>
+
+              <!-- MOBILE WIREFRAMES: 4 across in one row -->
+              <figure class="case-figure mb-4">
+                <figcaption class="text-center mt-2">
+                  Mobile wireframes: Role dashboards.
+                </figcaption>
+                <div class="row no-gutters">
+                  <div class="col-3 p-1">
+                    <img
+                      class="img-fluid"
+                      src="/assets/mobile-1.9c1ac9ff.png"
+                      alt="Learnly Mobile Wireframe 1"
+                    />
+                  </div>
+                  <div class="col-3 p-1">
+                    <img
+                      class="img-fluid"
+                      src="/assets/mobile-2.4882804b.png"
+                      alt="Learnly Mobile Wireframe 2"
+                    />
+                  </div>
+                  <div class="col-3 p-1">
+                    <img
+                      class="img-fluid"
+                      src="/assets/mobile-3.47fa71d0.png"
+                      alt="Learnly Mobile Wireframe 3"
+                    />
+                  </div>
+                  <div class="col-3 p-1">
+                    <img
+                      class="img-fluid"
+                      src="/assets/mobile-4.b8d9c108.png"
+                      alt="Learnly Mobile Wireframe 4"
+                    />
+                  </div>
+                </div>
+              </figure>
+
+              <!-- DESKTOP WIREFRAMES: 3 across in one row -->
+              <figure class="case-figure">
+                <figcaption class="text-center mt-2">
+                  Desktop wireframes: Trainer session flows. User tables, and
+                  view and create new trainings pages.
+                </figcaption>
+                <div class="row no-gutters">
+                  <div class="col-12 p-1">
+                    <img
+                      class="img-fluid"
+                      src="/assets/desktop-1.76e8e9fa.png"
+                      alt="Learnly Desktop Wireframe 1"
+                    />
+                  </div>
+                  <div class="col-12 p-1">
+                    <img
+                      class="img-fluid"
+                      src="/assets/desktop-2.20f6caee.png"
+                      alt="Learnly Desktop Wireframe 2"
+                    />
+                  </div>
+                  <div class="col-12 p-1">
+                    <img
+                      class="img-fluid"
+                      src="/assets/desktop-3.e3da32af.png"
+                      alt="Learnly Desktop Wireframe 3"
+                    />
+                  </div>
+                </div>
+              </figure>
+
+              <p class="mt-3">
+                Full wireframes in Figma:
+                <a
+                  href="https://www.figma.com/design/argm567xBdqO7crGaXTWcP/Wireframes---Web-4350-2.0?node-id=6-256"
+                  target="_blank"
+                  rel="noopener"
+                  >open file ↗</a
+                >
+              </p>
+            </div>
+
+            <h3>5. Deployment & Testing</h3>
+            <ul>
+              <li>Frontend deployed on Netlify.</li>
+              <li>Backend deployed on Vercel (serverless functions).</li>
+              <li>Team presentations + YouTube demo video.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- FINAL DESIGN -->
+        <section class="section" id="design">
+          <div class="content">
+            <h2 class="label-heading">Final Design</h2>
+            <ul>
+              <li>
+                <strong>Role Dashboards:</strong> Admin, Manager, Trainer,
+                Employee views.
+              </li>
+              <li>
+                <strong>Session Management:</strong> Create and assign
+                compliance trainings.
+              </li>
+              <li>
+                <strong>Completion Tracking:</strong> Trainers and employees log
+                completion.
+              </li>
+              <li>
+                <strong>Responsive:</strong> Mobile-friendly for on-the-go
+                access.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ENGINEERING -->
+        <section class="section" id="engineering">
+          <div class="content">
+            <h2 class="label-heading">Engineering</h2>
+
+            <h3>Stack & Project Layout</h3>
+            <pre><code>client/              # React (role dashboards, forms, tables)
+server/
+  src/
+    models/         # Mongoose schemas (User, Role, Training, Session, Assignment, Enrollment, Completion)
+    middleware/     # auth.js (JWT), authorizeRole.js (RBAC), errorHandler.js
+    routes/         # /auth, /users, /trainings, /sessions, /assignments, /enrollments, /completions
+    controllers/    # handler logic per resource
+    db.js           # MongoDB Atlas connection
+    app.js          # Express app (CORS, JSON, routes, errors)
+  serverless.json   # Vercel config (if using)</code></pre>
+
+            <h3>Database Requirements & Schemas (Mongoose)</h3>
+            <pre><code>// models/Role.js
+const RoleSchema = new mongoose.Schema({
+  name: { type: String, enum: ["ADMIN","MANAGER","TRAINER","EMPLOYEE"], required: true }
+});
+
+// models/User.js
+const UserSchema = new mongoose.Schema({
+  firstName: String,
+  lastName: String,
+  email: { type: String, unique: true, index: true },
+  passwordHash: String,
+  role: { type: mongoose.Schema.Types.ObjectId, ref: "Role", required: true }
+});
+
+// models/TrainingProgram.js
+const TrainingProgramSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  description: String,
+  duration: Number, // minutes or hours
+  manager: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  deadline: Date
+});
+
+// models/TrainingSession.js
+const TrainingSessionSchema = new mongoose.Schema({
+  training: { type: mongoose.Schema.Types.ObjectId, ref: "TrainingProgram", required: true },
+  trainer: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  sessionDate: Date,
+  sessionTime: String
+});
+
+// models/Assignment.js
+const AssignmentSchema = new mongoose.Schema({
+  training: { type: mongoose.Schema.Types.ObjectId, ref: "TrainingProgram", required: true },
+  employee: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  assignedByManager: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }
+});
+
+// models/Enrollment.js
+const EnrollmentSchema = new mongoose.Schema({
+  employee: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  session: { type: mongoose.Schema.Types.ObjectId, ref: "TrainingSession", required: true },
+  enrollmentDate: { type: Date, default: Date.now }
+});
+
+// models/CompletionStatus.js
+const CompletionStatusSchema = new mongoose.Schema({
+  enrollment: { type: mongoose.Schema.Types.ObjectId, ref: "Enrollment", required: true },
+  trainer: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  completionDate: Date,
+  status: { type: String, enum: ["COMPLETED","IN_PROGRESS","FAILED"], default: "COMPLETED" }
+});</code></pre>
+
+            <h3>Connecting to MongoDB Atlas</h3>
+            <pre><code>// db.js
+import mongoose from "mongoose";
+const uri = process.env.MONGODB_URI; // mongodb+srv://user:pw@cluster/db?retryWrites=true&w=majority
+
+export async function connectDB() {
+  mongoose.set("strictQuery", true);
+  await mongoose.connect(uri, { dbName: process.env.MONGODB_DB || "learnly" });
+  console.log("✅ Connected to MongoDB Atlas");
+}</code></pre>
+            <p>
+              <strong>.env</strong> (backend): <code>MONGODB_URI</code>,
+              <code>JWT_SECRET</code>, <code>CORS_ORIGIN</code>, etc.
+            </p>
+
+            <h3>Auth & Role-Based Dashboards</h3>
+            <pre><code>// middleware/auth.js (JWT)
+export function requireAuth(req,res,next){
+  const token = req.headers.authorization?.replace("Bearer ","");
+  if(!token) return res.status(401).send("Unauthorized");
+  try {
+    req.user = jwt.verify(token, process.env.JWT_SECRET);
+    next();
+  } catch { return res.status(401).send("Invalid token"); }
+}
+
+// middleware/authorizeRole.js
+export const authorizeRole = (...allowed) => (req,res,next) => {
+  if(!allowed.includes(req.user.role)) return res.status(403).send("Forbidden");
+  next();
+};</code></pre>
+
+            <h3>REST Endpoints (examples)</h3>
+            <pre><code>// routes/trainings.js
+router.post("/", requireAuth, authorizeRole("ADMIN","MANAGER"), createTraining);
+router.get("/", requireAuth, listTrainings);
+
+// routes/assignments.js
+router.post("/", requireAuth, authorizeRole("MANAGER"), assignTrainingToEmployee);
+router.get("/me", requireAuth, listAssignmentsForCurrentUser);
+
+// routes/completions.js
+router.post("/", requireAuth, authorizeRole("TRAINER"), markCompletion);
+router.get("/", requireAuth, authorizeRole("ADMIN","MANAGER"), listCompletionsByProgram);</code></pre>
+
+            <h3>Frontend: Showing Different Dashboards</h3>
+            <pre><code>// client/src/App.jsx (conceptual)
+const { user } = useAuth();
+if (!user) return &lt;AuthScreens /&gt;;
+
+switch (user.role) {
+  case "ADMIN":   return &lt;AdminDashboard /&gt;;
+  case "MANAGER": return &lt;ManagerDashboard /&gt;;
+  case "TRAINER": return &lt;TrainerDashboard /&gt;;
+  default:        return &lt;EmployeeDashboard /&gt;;
+}</code></pre>
+            <p>
+              Each dashboard calls role-appropriate endpoints and renders tables
+              (trainings, sessions, assignments, enrollments, completions) with
+              filters, due dates, and actions.
+            </p>
+
+            <h3>Data Integrity & Auditing</h3>
+            <ul>
+              <li>
+                Refs between documents (e.g., Completion → Enrollment →
+                Session/Training) preserve traceability.
+              </li>
+              <li>
+                Server validation ensures only trainers can mark completions;
+                managers assign; admins configure.
+              </li>
+              <li>Timestamps on all writes provide audit trails.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- LEARNINGS -->
+        <section class="section" id="learnings">
+          <div class="content">
+            <h2 class="label-heading">Key Learnings</h2>
+            <ul>
+              <li>
+                Designing roles first clarifies schema relationships and API
+                boundaries.
+              </li>
+              <li>
+                Serverless + Atlas is fast to deploy, but requires careful
+                cold-start and connection handling.
+              </li>
+              <li>
+                Consistent naming between UI, API, and DB reduces integration
+                friction.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- IMPACT -->
+        <section class="section" id="impact">
+          <div class="content">
+            <h2 class="label-heading">Impact</h2>
+            <p>
+              Learnly offered a scalable way for organizations to manage
+              compliance training digitally. Instead of fragmented tools, all
+              data and workflows became centralized, reducing audit risk and
+              saving managers time.
+            </p>
+          </div>
+        </section>
+
+        <footer>
+          © Learnly Case Study — UX + Backend. Built with React, Node.js,
+          Express, and MongoDB Atlas.
+        </footer>
+      </div>
+
+      <!-- Right gutter -->
+      <div class="case-gutter"></div>
+    </main>
+
+    <a href="index.html" class="back-arrow" aria-label="Go back">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+
+    <!-- Scroll + active menu -->
+    <script>
+      const links = document.querySelectorAll(".case-menu a");
+      const sections = [...links].map((l) =>
+        document.querySelector(l.getAttribute("href"))
+      );
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              links.forEach((l) => l.classList.remove("active"));
+              const active = document.querySelector(
+                `.case-menu a[href="#${entry.target.id}"]`
+              );
+              if (active) active.classList.add("active");
+            }
+          });
+        },
+        { rootMargin: "-40% 0px -50% 0px" }
+      );
+      sections.forEach((s) => s && io.observe(s));
+
+      // Transparent → solid navbar
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector(".navbar-home");
+        if (window.scrollY > 50) nav.classList.add("scrolled");
+        else nav.classList.remove("scrolled");
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

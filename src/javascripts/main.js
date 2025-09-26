@@ -1,7 +1,6 @@
 import "../stylesheets/main.scss";
 
 let intro = document.querySelector(".intro");
-let load = document.querySelector(".load-header");
 let loadSpan = document.querySelectorAll(".load");
 
 window.addEventListener("DOMContentLoaded", () => {
