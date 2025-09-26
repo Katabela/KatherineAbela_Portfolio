@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WIMIA — Case Study (UX + Full-Stack)</title>
+    <meta
+      name="description"
+      content="WIMIA case study: research, design, and full-stack implementation details (Django, Python, SQLite, JS)."
+    />
+    <link rel="icon" href="./images/logo.png" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./stylesheets/main.css" />
+    <link rel="stylesheet" href="./stylesheets/overview.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-home">
+      <a class="navbar-brand" href="index.html">KA</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="index.html">Portfolio</a>
+          <a class="nav-item nav-link" href="about.html">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-overview">
+      <img src="images/WIMIA.png" alt="WIMIA Hero" class="hero-bg" />
+      <div class="hero-overlay">
+        <a href="index.html" class="hero-back" aria-label="Back to portfolio">
+          <i class="bi bi-arrow-left"></i>
+        </a>
+        <div class="hero-content">
+          <h1>WIMIA</h1>
+          <p>What Is My Itinerary Again?</p>
+        </div>
+      </div>
+    </section>
+
+    <main class="case-study">
+      <!-- Left sticky menu -->
+      <aside class="case-menu">
+        <nav>
+          <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#role">Role & Timeline</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#design">Final Design</a></li>
+            <li><a href="#engineering">Engineering</a></li>
+            <li><a href="#learnings">Key Learnings</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#next">What’s Next</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Middle content -->
+      <div class="case-content">
+        <header>
+          <div class="crumbs">Case Study</div>
+          <h1 class="title">WIMIA — What Is My Itinerary Again?</h1>
+          <p class="subtitle">
+            A web-based event management platform that centralizes itineraries,
+            automates reminders, and streamlines communication for sports
+            organizations — designed and shipped end-to-end (UX + full-stack).
+          </p>
+          <div class="case-cta">
+            <a
+              class="cta"
+              href="https://wimia-production.up.railway.app/"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="bi bi-globe2" aria-hidden="true"></i>
+              <span>Open Live App</span>
+            </a>
+          </div>
+        </header>
+
+        <!-- OVERVIEW -->
+        <section class="section" id="overview">
+          <div class="content">
+            <h2 class="label-heading">Overview</h2>
+            <p>
+              WIMIA was built to solve a recurring pain point for clinics and
+              events: travel details were scattered across PDFs, chats, and
+              email threads. Coaches, athletes, and admins needed a single
+              source of truth with clear schedules and proactive notifications.
+            </p>
+            <h3>Challenge</h3>
+            <p>
+              Manual itinerary management created duplicated effort and late
+              updates. The core challenge was to reduce operational overhead for
+              admins while giving athletes a fast, reliable way to access their
+              own travel information.
+            </p>
+            <h3>Outcome</h3>
+            <p>
+              The result is a responsive web app where admins can compose event
+              itineraries, attach schedules, and send automated reminders.
+              Athletes receive simplified, personalized views of where to be and
+              when — no hunting through messages.
+            </p>
+            <div class="row kpis">
+              <div class="col-md-4">
+                <div class="card">
+                  <strong>1 source of truth</strong><br />
+                  Consolidated travel + schedule
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <strong>Minutes → Seconds</strong><br />
+                  Faster access to event details
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <strong>Async comms</strong><br />
+                  Automated, timely reminders
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ROLE -->
+        <section class="section" id="role">
+          <div class="content">
+            <h2 class="label-heading">Role & Timeline</h2>
+            <div class="dl">
+              <div>Role</div>
+              <div>
+                Product Designer & Full-Stack Engineer (Research, IA,
+                Wireframing, UI, Prototyping, Django backend, DB design, email
+                infra)
+              </div>
+              <div>Timeline</div>
+              <div>~10 weeks (design sprints + backend implementation)</div>
+              <div>Tools</div>
+              <div>
+                Figma, FigJam, Trello, Google Workspace, Django, Python, SQLite,
+                JavaScript
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="section" id="process">
+          <div class="content">
+            <h2 class="label-heading">Process</h2>
+            <h3>1. Research & Discovery</h3>
+            <ul>
+              <li>
+                Interviewed event admins and coaches to map workflows and
+                friction points.
+              </li>
+              <li>
+                Competitive scan across TeamSnap, spreadsheets, and calendar
+                tools.
+              </li>
+              <li>Pain themes: fragmented comms, stale PDFs, no reminders.</li>
+            </ul>
+            <h3>2. Define</h3>
+            <ul>
+              <li>Personas for <em>Admin</em> and <em>Athlete</em>.</li>
+              <li>Journey: planning → distribution → event-day execution.</li>
+              <li>
+                Focus: deliver the right information at the right time with
+                minimal input burden.
+              </li>
+            </ul>
+            <h3>3. Ideate & Wireframe</h3>
+            <ul>
+              <li>Flows for creating events & viewing schedules.</li>
+              <li>Low-fi screens to test navigation, labels, grouping.</li>
+              <li>Converged IA: Events → Event Days → Assignments.</li>
+            </ul>
+            <h3>4. Prototype</h3>
+            <ul>
+              <li>Responsive UI with clear hierarchy and contrast.</li>
+              <li>
+                Components for event days, flights, rentals, coaches, files.
+              </li>
+              <li>Automated reminders tied to event times.</li>
+            </ul>
+            <h3>5. Test & Iterate</h3>
+            <ul>
+              <li>Usability tests revealed form fatigue and confusion.</li>
+              <li>Optimized dashboard for next event actions.</li>
+              <li>Chunked forms into logical sections.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- FINAL DESIGN -->
+        <section class="section" id="design">
+          <div class="content">
+            <h2 class="label-heading">Final Design</h2>
+            <ul>
+              <li>
+                <strong>Admin Dashboard:</strong> Central hub for events &
+                readiness.
+              </li>
+              <li>
+                <strong>Automated Reminders:</strong> Emails tied to travel and
+                event start.
+              </li>
+              <li>
+                <strong>Athlete View:</strong> Personalized, mobile-friendly
+                itinerary.
+              </li>
+              <li><strong>Responsive:</strong> Works across all devices.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ENGINEERING -->
+        <section class="section" id="engineering">
+          <div class="content">
+            <h2 class="label-heading">Engineering</h2>
+            <p>
+              WIMIA is a Django-based web app with pragmatic architecture,
+              prioritizing reliability, iteration speed, and maintainability.
+            </p>
+            <pre><code>Client: Responsive UI → Django views → ORM → SQLite/Postgres
+Integrations: Gmail OAuth, file uploads
+Observability: Admin metrics, error toasts</code></pre>
+          </div>
+        </section>
+
+        <!-- LEARNINGS -->
+        <section class="section" id="learnings">
+          <div class="content">
+            <h2 class="label-heading">Key Learnings</h2>
+            <ul>
+              <li>
+                Designing for power vs. casual users requires different
+                defaults.
+              </li>
+              <li>
+                Automation is as much UX as engineering: reminders reduce
+                cognitive load.
+              </li>
+              <li>Small label/hierarchy tweaks produced big clarity gains.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- IMPACT -->
+        <section class="section" id="impact">
+          <div class="content">
+            <h2 class="label-heading">Impact</h2>
+            <p>
+              WIMIA consolidates itineraries, removes manual comms, and gets
+              athletes the right info faster. Admins save hours; athletes trust
+              their schedules.
+            </p>
+          </div>
+        </section>
+
+        <!-- NEXT -->
+        <section class="section" id="next">
+          <div class="content">
+            <h2 class="label-heading">What’s Next</h2>
+            <ul>
+              <li>Instrumentation for task metrics.</li>
+              <li>Move to Postgres + task queue for email scaling.</li>
+              <li>Public sharing links with expiry and auditing.</li>
+            </ul>
+          </div>
+        </section>
+
+        <footer>
+          © WIMIA Case Study — UX + Full-Stack. Built with Django, Python,
+          SQLite.
+        </footer>
+      </div>
+
+      <!-- Right gutter -->
+      <div class="case-gutter"></div>
+    </main>
+
+    <a href="index.html" class="back-arrow" aria-label="Go back">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+
+    <!-- Scroll + active menu -->
+    <script>
+      const links = document.querySelectorAll(".case-menu a");
+      const sections = [...links].map((l) =>
+        document.querySelector(l.getAttribute("href"))
+      );
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              links.forEach((l) => l.classList.remove("active"));
+              const active = document.querySelector(
+                `.case-menu a[href="#${entry.target.id}"]`
+              );
+              if (active) active.classList.add("active");
+            }
+          });
+        },
+        { rootMargin: "-40% 0px -50% 0px" }
+      );
+      sections.forEach((s) => s && io.observe(s));
+
+      // Transparent → solid navbar
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector(".navbar-home");
+        if (window.scrollY > 50) nav.classList.add("scrolled");
+        else nav.classList.remove("scrolled");
+      });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

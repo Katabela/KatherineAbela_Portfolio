@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WIMIA — Case Study (UX + Full‑Stack)</title>
+  <meta name="description" content="WIMIA case study: research, design, and full‑stack implementation details (Django, Python, SQLite, JS)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafafa;
+      --ink: #0f172a; /* slate-900 */
+      --ink-dim: #334155; /* slate-600 */
+      --line: #e5e7eb; /* gray-200 */
+      --accent: #111827; /* gray-900 for strong text */
+      --muted: #64748b; /* slate-500 */
+      --card: #ffffff;
+      --radius: 16px;
+      --maxw: 920px; /* content width similar to the reference */
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .page { max-width: var(--maxw); margin: 0 auto; padding: 56px 20px 96px; }
+
+    /* Header */
+    header { margin-bottom: 48px; }
+    .crumbs { font-size: 14px; color: var(--muted); }
+    .title { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; letter-spacing: -0.01em; margin: 8px 0 8px; font-weight: 700; }
+    .subtitle { font-size: clamp(16px, 2.4vw, 19px); color: var(--ink-dim); margin: 0; }
+
+    /* Two-column section layout that collapses on mobile (similar feel to the reference) */
+    .section { display: grid; grid-template-columns: 220px 1fr; gap: 28px; padding: 28px 0; border-top: 1px solid var(--line); }
+    .section:first-of-type { border-top: 0; }
+    .section .label { font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); padding-top: 6px; }
+    .section .content > h3 { margin: 0 0 8px; font-size: 22px; letter-spacing: -0.01em; }
+    .section .content p { margin: 0 0 14px; }
+    .section .content ul { margin: 0 0 8px 1.2em; }
+
+    /* Cards for callouts */
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 18px; }
+    .kpi { display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top: 12px; }
+    .kpi .metric { padding:14px; border:1px dashed var(--line); border-radius: 12px; background:#fff; }
+    .metric .value { font-weight: 700; font-size: 20px; }
+
+    /* Media placeholders */
+    .media { border: 1px dashed var(--line); border-radius: var(--radius); background: #fff; padding: 28px; text-align:center; color: var(--muted); font-size: 14px; }
+
+    /* Definition list blocks */
+    .dl { display:grid; grid-template-columns: 160px 1fr; gap: 12px 20px; }
+    .dl div { padding: 6px 0; border-bottom: 1px dashed var(--line); }
+    .dl div:nth-child(odd) { color: var(--muted); }
+
+    /* Code-ish styles for architecture diagram snippets */
+    pre { background:#0b1020; color:#e5e7eb; border-radius: 12px; padding: 18px; overflow:auto; font-size: 13px; line-height: 1.5; }
+
+    /* Footer */
+    footer { margin-top: 56px; font-size: 14px; color: var(--muted); }
+
+    @media (max-width: 860px) {
+      .section { grid-template-columns: 1fr; }
+      .section .label { padding-top: 0; }
+      .dl { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="crumbs">Case Study</div>
+      <h1 class="title">WIMIA — What Is My Itinerary Again?</h1>
+      <p class="subtitle">A web-based event management platform that centralizes itineraries, automates reminders, and streamlines communication for sports organizations — designed and shipped end‑to‑end (UX + full‑stack).
+      </p>
+    </header>
+
+    <!-- OVERVIEW -->
+    <section class="section" id="overview">
+      <div class="label">Overview</div>
+      <div class="content">
+        <h3>Context</h3>
+        <p>WIMIA was built to solve a recurring pain point for clinics and events: travel details were scattered across PDFs, chats, and email threads. Coaches, athletes, and admins needed a single source of truth with clear schedules and proactive notifications.</p>
+        <h3>Challenge</h3>
+        <p>Manual itinerary management created duplicated effort and late updates. The core challenge was to reduce operational overhead for admins while giving athletes a fast, reliable way to access their own travel information.</p>
+        <h3>Outcome</h3>
+        <p>The result is a responsive web app where admins can compose event itineraries, attach schedules, and send automated reminders. Athletes receive simplified, personalized views of where to be and when — no hunting through messages.</p>
+        <div class="kpi">
+          <div class="metric"><div class="value">1 source of truth</div><div class="note">Consolidated travel + schedule</div></div>
+          <div class="metric"><div class="value">Minutes → Seconds</div><div class="note">Faster access to next event details</div></div>
+          <div class="metric"><div class="value">Async comms</div><div class="note">Automated, timely reminders</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROLE & TIMELINE -->
+    <section class="section" id="role">
+      <div class="label">Role & Timeline</div>
+      <div class="content">
+        <div class="dl">
+          <div>Role</div><div>Product Designer & Full‑Stack Engineer (Research, IA, Wireframing, UI, Prototyping, Django backend, DB design, email infra)</div>
+          <div>Timeline</div><div>~10 weeks (design sprints + backend implementation)</div>
+          <div>Tools</div><div>Figma, FigJam, Trello, Google Workspace, Django, Python, SQLite, JavaScript</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section" id="process">
+      <div class="label">Process</div>
+      <div class="content">
+        <h3>1. Research & Discovery</h3>
+        <ul>
+          <li>Interviewed event admins and coaches to map workflows and friction points.</li>
+          <li>Competitive scan across TeamSnap, spreadsheets, and generic calendar tools.</li>
+          <li>Pain themes: fragmented comms, stale PDFs, lack of proactive reminders.</li>
+        </ul>
+        <h3>2. Define</h3>
+        <ul>
+          <li>Personas for <em>Admin (power user)</em> and <em>Athlete (casual consumer)</em>.</li>
+          <li>Journey from planning → distribution → event‑day execution.</li>
+          <li>"How Might We" focus: deliver the right information at the right time with minimal input burden.</li>
+        </ul>
+        <h3>3. Ideate & Wireframe</h3>
+        <ul>
+          <li>Flows for “Create Event Itinerary” and “View Athlete Schedule”.</li>
+          <li>Low‑fi screens to test navigation, labels, and grouping.</li>
+          <li>Converged on a clean IA: Events → Event Days → Assignments → Notifications.</li>
+        </ul>
+        <h3>4. Prototype</h3>
+        <ul>
+          <li>Responsive UI system with clear hierarchy and accessible contrast.</li>
+          <li>Components for event days, flights, rental cars, coach contacts, and file uploads.</li>
+          <li>Integrated automated reminders tied to event times.</li>
+        </ul>
+        <h3>5. Test & Iterate</h3>
+        <ul>
+          <li>Usability tests with both user types surfaced form fatigue and priority confusion.</li>
+          <li>Optimized the admin dashboard to highlight the <strong>next event</strong> and critical actions.</li>
+          <li>Simplified labels and chunked long forms into logical sections.</li>
+        </ul>
+        <div class="media">[ Insert process images / wireframes / prototypes ]</div>
+      </div>
+    </section>
+
+    <!-- FINAL DESIGN -->
+    <section class="section" id="design">
+      <div class="label">Final Design</div>
+      <div class="content">
+        <ul>
+          <li><strong>Admin Dashboard:</strong> Central hub for creating events and tracking readiness.</li>
+          <li><strong>Automated Reminders:</strong> Emails sent before travel and event start times.</li>
+          <li><strong>Athlete View:</strong> Personalized, mobile‑friendly itinerary with clear timing.</li>
+          <li><strong>Responsive:</strong> Works seamlessly across desktop, tablet, mobile.</li>
+        </ul>
+        <div class="media">[ Insert annotated mockups / screen captures ]</div>
+      </div>
+    </section>
+
+    <!-- NEW: FULL‑STACK / BACKEND ENGINEERING SECTION -->
+    <section class="section" id="engineering">
+      <div class="label">Engineering</div>
+      <div class="content">
+        <h3>Architecture</h3>
+        <p>WIMIA is a Django‑based web app with a pragmatic monolith architecture. The stack prioritizes reliability, quick iteration, and maintainability for a small team.</p>
+        <div class="card" style="margin:12px 0 18px;">
+<pre><code>Client (Browser)
+  └── Responsive UI (HTML/CSS/JS)
+      └── Fetch / form posts
+Backend (Django)
+  ├── URL routing → views (CBV/FBV)
+  ├── Templates + context rendering
+  ├── ORM models (Events, EventDay, FlightInfo, Assignment, CoachContact)
+  ├── Services (email delivery, reminder scheduling, token refresh)
+  └── Forms & validation (chunked, progressive)
+Persistence (SQLite in dev / Postgres-ready)
+  └── Migrations via Django
+Integrations
+  ├── Gmail OAuth (token refresh automation)
+  └── File uploads (schedule PDFs)
+Observability
+  └── Admin metrics, basic logs, error toasts
+</code></pre>
+        </div>
+
+        <h3>Data Model (Key Tables)</h3>
+        <ul>
+          <li><strong>Event</strong> — name, location, dates, level, coach contact, rental car info, alternate travel notes.</li>
+          <li><strong>EventDay</strong> — per‑day datetime blocks (supports Day 1, Day 2, ... with add‑a‑day pattern).</li>
+          <li><strong>FlightInfo</strong> — unified model for per‑person flights (airline, number, depart/arrive, confirmation, bag options).</li>
+          <li><strong>Assignment</strong> — employee ↔ event relationship with role and visibility.</li>
+          <li><strong>ScheduleDocument</strong> — file uploads (PDF) with metadata and versioning fields.</li>
+        </ul>
+
+        <h3>Notable Backend Features</h3>
+        <ul>
+          <li><strong>Automated Token Refresh:</strong> Background refresh for Gmail OAuth tokens prevents email delivery failures.</li>
+          <li><strong>Reminder Service:</strong> Pre‑event notifications (e.g., T‑7 days, T‑24 hours) using deterministic schedule rules.</li>
+          <li><strong>Composable Forms:</strong> Long forms split into digestible sections; server‑side validation mirrors UI hints.</li>
+          <li><strong>Role‑aware Views:</strong> Admins see full event context; athletes see only assigned, relevant details.</li>
+          <li><strong>Document Pipeline:</strong> Secure PDF upload, storage, and linking per event/day.</li>
+        </ul>
+
+        <h3>Security & Ops</h3>
+        <ul>
+          <li>CSRF protection and session auth via Django; environment secrets through <code>.env</code>.</li>
+          <li>Field‑level safeguards for PII (coach phone/email) and least‑privilege access for athlete views.</li>
+          <li>Graceful error handling and resilient email retries for transient failures.</li>
+        </ul>
+
+        <h3>Representative View (Pseudo‑code)</h3>
+        <div class="card">
+<pre><code># views.py (simplified)
+class EventDetailView(LoginRequiredMixin, DetailView):
+    model = Event
+    template_name = "events/detail.html"
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        event = self.get_object()
+        ctx["days"] = event.eventday_set.order_by("start_dt")
+        ctx["flights"] = FlightInfo.objects.filter(event=event).select_related("user")
+        ctx["pdf"] = event.schedule_document
+        return ctx
+
+# service: reminders.py (deterministic offsets)
+REMINDERS = [timedelta(days=7), timedelta(days=1)]
+
+def schedule_event_reminders(event):
+    for offset in REMINDERS:
+        send_at = event.start_dt - offset
+        queue_email(event, send_at)
+</code></pre>
+        </div>
+
+        <h3>Why This Matters</h3>
+        <p>The engineering choices support the UX intent: less admin toil, fewer surprises before travel, and a reliable, simple delivery mechanism for time‑sensitive information.</p>
+      </div>
+    </section>
+
+    <!-- LEARNINGS -->
+    <section class="section" id="learnings">
+      <div class="label">Key Learnings</div>
+      <div class="content">
+        <ul>
+          <li>Designing for power vs. casual users requires different defaults and visual weight.</li>
+          <li>Automation reduces cognitive load; reminders are as much a UX feature as a backend feature.</li>
+          <li>Small label and hierarchy tweaks, validated with quick tests, yielded outsized clarity gains.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="section" id="impact">
+      <div class="label">Impact</div>
+      <div class="content">
+        <p>WIMIA consolidates itineraries, removes manual comms, and gets athletes the right information faster. Admins save hours per event; athletes gain confidence that their schedule is accurate and accessible.</p>
+      </div>
+    </section>
+
+    <!-- NEXT STEPS / CTA -->
+    <section class="section" id="next">
+      <div class="label">What’s Next</div>
+      <div class="content">
+        <ul>
+          <li>Instrumentation for task‑level metrics (open rates, reminder effectiveness, time‑to‑info).</li>
+          <li>Move to Postgres + task queue for high‑concurrency email and scheduling.</li>
+          <li>Public sharing links with granular expiry and auditing.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      © WIMIA Case Study — UX + Full‑Stack. Built with Django, Python, SQLite, and a lot of coffee.
+    </footer>
+  </main>
+</body>
+</html>

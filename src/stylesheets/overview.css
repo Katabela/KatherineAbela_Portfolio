@@ -1,0 +1,578 @@
+:root {
+  --bg: #fafafa;
+  --ink: #0f172a; /* slate-900 */
+  --ink-dim: #334155; /* slate-600 */
+  --line: #e5e7eb; /* gray-200 */
+  --accent: #111827; /* gray-900 for strong text */
+  --muted: #64748b; /* slate-500 */
+  --card: #ffffff;
+  --main-purple: #5856d6;
+  --radius: 16px;
+  --maxw: 920px;
+  --nav-height: clamp(56px, 8vh, 72px);
+  --label-top: calc(var(--nav-height, 72px) + 12px);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.page {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--nav-height) 20px 96px;
+}
+
+main.case-study {
+  min-width: 100vw;
+  background: var(--bg);
+  position: relative;
+  z-index: 5;
+}
+
+/* -------------------------------
+   Hero Section
+--------------------------------*/
+/* Hero wrapper */
+.hero-overview {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Background image */
+.hero-overview .hero-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Dark overlay */
+.hero-overview::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+}
+
+/* Foreground content */
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-overlay h1 {
+  font-size: clamp(36px, 6vw, 80px);
+  font-weight: 700;
+  margin-bottom: 0.25em;
+}
+
+.hero-overlay p {
+  font-size: clamp(16px, 2vw, 24px);
+  margin: 0;
+}
+
+/* Slayground overlay */
+.hero-overview::after .slayground {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 15, 18, 0.6),
+    rgba(174, 2, 105, 0.75)
+  );
+}
+
+/* Gradient background for Slayground hero */
+.hero-overlay.slayground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0f0f12, #ae0269);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff; /* make text pop against gradient */
+  text-align: center;
+  padding: 2rem;
+  /* semi-transparent gradient so the image is visible */
+  /* background: linear-gradient(
+    135deg,
+    rgba(15, 15, 18, 0.6),
+     rgba(174, 2, 105, 0.75) 
+  ); */
+  z-index: 1;
+}
+
+/* Back arrow button */
+.hero-back {
+  position: absolute;
+  left: -20%; /* distance from left edge */
+  top: 50%; /* vertical center */
+  transform: translateY(-50%);
+  z-index: 3; /* above overlay */
+  font-size: 2rem; /* arrow size */
+  color: #fff; /* white on dark overlay */
+  text-decoration: none;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-back:hover {
+  color: var(--main-purple, 0.5);
+  transform: translateY(-50%) scale(1.25);
+}
+
+/* -------------------------------
+   Navbar
+--------------------------------*/
+.navbar-home {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem; /* good default size */
+  letter-spacing: 2px; /* adds breathing space */
+  text-transform: uppercase; /* keeps it clean */
+  transition: color 0.3s ease; /* smooth hover effect */
+}
+
+.navbar-brand:hover {
+  color: #fff; /* subtle hover shade */
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  text-decoration: none; /* remove underline */
+}
+
+/* -------------------------------
+   Layout: 3 column case study
+--------------------------------*/
+.case-study {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr) minmax(80px, 12%);
+  gap: 3rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--nav-height) 3rem 5rem;
+}
+
+.case-content {
+  max-width: 850px;
+}
+
+.case-gutter {
+}
+
+/* Left sticky menu */
+.case-menu nav {
+  position: sticky;
+  top: var(--nav-height);
+  height: calc(100vh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.case-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.case-menu a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--muted);
+  transition: color 0.2s ease, background 0.2s ease;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+.case-menu a:hover {
+  color: var(--accent);
+}
+.case-menu a.active {
+  color: #fff;
+  background: var(--main-purple);
+}
+
+/* Collapse on mobile */
+@media (max-width: 900px) {
+  .case-study {
+    grid-template-columns: 1fr;
+    padding: var(--nav-height) 1.25rem 2.5rem;
+  }
+  .case-menu {
+    display: none;
+  }
+  .case-content {
+    max-width: 100%;
+  }
+}
+
+/* -------------------------------
+   Typography / header
+--------------------------------*/
+header {
+  margin-bottom: 48px;
+}
+.crumbs {
+  font-size: 14px;
+  color: var(--muted);
+}
+.title {
+  font-size: clamp(28px, 15vw, 65px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 8px 0;
+  font-weight: 700;
+}
+.subtitle {
+  font-size: clamp(16px, 2.4vw, 19px);
+  color: var(--ink-dim);
+  margin: 0;
+}
+
+.label-heading {
+  padding: 0 0 2rem 0;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+/* -------------------------------
+   Sections
+--------------------------------*/
+.case-content > section {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--line);
+}
+.case-content > section:first-of-type {
+  padding-top: 48px;
+}
+
+.case-content > section > h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+}
+.case-content > section > h3 {
+  margin: 18px 0 8px;
+  font-size: 22px;
+}
+.case-content > section p {
+  margin: 0 0 20px;
+}
+.case-content > section ul,
+.case-content > section ol {
+  margin: 0 0 20px 1.4em;
+}
+
+/* -------------------------------
+   Cards / KPIs
+--------------------------------*/
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.kpi {
+  margin-top: 16px;
+}
+.kpi .card {
+  padding: 18px;
+  margin-bottom: 16px;
+  height: 100%; /* keeps all cards equal height */
+}
+.kpi .metric {
+  flex: 1 1 auto; /* flexible width but keeps them inline */
+  min-width: 180px; /* ensures they don’t get too small */
+  padding: 14px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+.metric .value {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* -------------------------------
+   Media
+--------------------------------*/
+.media {
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 28px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.media-grid {
+  display: grid;
+  gap: 12px;
+}
+@media (min-width: 860px) {
+  .media-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Two-up pairs (before/after) */
+.pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 860px) {
+  .pair {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.pair img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.pair figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* -------------------------------
+   Personas
+--------------------------------*/
+.personas {
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 900px) {
+  .personas {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.persona {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06),
+    0 8px 24px rgba(16, 24, 40, 0.06);
+
+  /* “Indent” effect */
+  transform: translateX(12px);
+}
+.persona h4 {
+  margin: 0 0 6px;
+}
+
+/* -------------------------------
+   Other UI Elements
+--------------------------------*/
+.swatches {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 0 2rem 0;
+}
+.swatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 6px rgb(15, 15, 18, 0.3);
+}
+
+/* -------------------------------
+   CTA Buttons
+--------------------------------*/
+.case-cta {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+}
+
+.case-cta .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.06s ease;
+}
+
+.case-cta .cta:hover,
+.case-cta .cta:focus-visible {
+  background: var(--main-purple);
+  color: #fff;
+  border-color: var(--line);
+  text-decoration: none;
+  transform: translateY(1px);
+  outline: none;
+}
+
+.case-cta .cta i {
+  font-size: 1rem;
+  line-height: 0;
+}
+
+/* -------------------------------
+   Process Cards
+--------------------------------*/
+
+/* Indented block wrapper (optional) */
+.indent-card {
+  margin: 1.25rem 0 2rem;
+  padding: 1rem 1.25rem 1.25rem 1.25rem; /* base padding */
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.06),
+    0 8px 24px rgba(16, 24, 40, 0.06);
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  /* “Indent” effect */
+  transform: translateX(12px);
+}
+
+/* Extra left padding for the “indented” feel */
+.indent-card--leftpad {
+  padding-left: 2rem;
+}
+
+/* Title inside the block */
+.indent-card .process-list {
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Paragraph spacing */
+.indent-card p {
+  margin: 0 0 1rem;
+  color: #4b5563;
+}
+
+/* Figure styling */
+.case-figure {
+  margin: 0;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05),
+    0 6px 18px rgba(16, 24, 40, 0.05);
+}
+
+.case-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid #e5e7eb; /* Tailwind’s gray-200 */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  background: #fff;
+  padding: 6px;
+}
+
+.case-figure figcaption {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+  background: #fafafa;
+  border-top: 1px solid rgba(17, 24, 39, 0.06);
+}
+
+/* Hover lift (subtle) */
+.indent-card:hover {
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.08),
+    0 12px 28px rgba(16, 24, 40, 0.1);
+  transform: translateX(12px) translateY(-1px);
+}
+
+/* Mobile: reduce the indent so it doesn’t feel cramped */
+@media (max-width: 576px) {
+  .indent-card {
+    transform: none;
+    padding: 0.875rem 1rem 1rem;
+  }
+  .indent-card--leftpad {
+    padding-left: 1rem;
+  }
+}
+
+/* -------------------------------
+   Code Blocks
+--------------------------------*/
+pre {
+  background: #0b1020;
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  overflow: auto;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  margin-top: 56px;
+  font-size: 14px;
+  color: var(--muted);
+}

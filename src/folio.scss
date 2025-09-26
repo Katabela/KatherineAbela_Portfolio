@@ -22,19 +22,19 @@ body {
   animation-fill-mode: forwards;
 }
 
-.navbar {
-  padding-left: 20px;
-}
+// .navbar {
+//   padding-left: 20px;
+// }
 
-.navbar-brand-img {
-  transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
-}
+// .navbar-brand-img {
+//   transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+// }
 
-.navbar-brand-img:hover {
-  transform: scale(1.05);
-  box-shadow: 3px 3px #000;
-  border: #000 solid 1.5px;
-}
+// .navbar-brand-img:hover {
+//   transform: scale(1.05);
+//   box-shadow: 3px 3px #000;
+//   border: #000 solid 1.5px;
+// }
 
 @keyframes fadeInAnimation {
   0% {

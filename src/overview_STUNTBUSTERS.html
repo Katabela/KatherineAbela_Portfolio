@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stuntbusters — Case Study (UX + Backend)</title>
+    <meta
+      name="description"
+      content="Stuntbusters case study: form-driven troubleshooting for cheer stunts; Python/Django/JS app with automated email notifications and database storage."
+    />
+    <link rel="icon" href="./images/logo.png" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Styles -->
+    <link rel="stylesheet" href="./stylesheets/main.css" />
+    <link rel="stylesheet" href="./stylesheets/overview.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-home">
+      <a class="navbar-brand" href="index.html">KA</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="index.html">Portfolio</a>
+          <a class="nav-item nav-link" href="about.html">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-overview">
+      <!-- Change the image per project -->
+      <img
+        src="images/stuntbusters.png"
+        alt="Stuntbusters Hero"
+        class="hero-bg"
+      />
+      <div class="hero-overlay">
+        <a href="index.html" class="hero-back" aria-label="Back to portfolio">
+          <i class="bi bi-arrow-left"></i>
+        </a>
+        <div class="hero-content">
+          <h1>Stuntbusters</h1>
+          <p>
+            Cheer stunt troubleshooting — guided form → insights, emails, and
+            storage
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <main class="case-study">
+      <!-- Left sticky menu -->
+      <aside class="case-menu">
+        <nav>
+          <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#role">Role & Timeline</a></li>
+            <li><a href="#personas">Personas</a></li>
+            <li><a href="#style">Style Guide</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#design">Final Design</a></li>
+            <li><a href="#engineering">Engineering</a></li>
+            <li><a href="#learnings">Key Learnings</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#next">What’s Next</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Middle content -->
+      <div class="case-content">
+        <header>
+          <div class="crumbs">Case Study</div>
+          <h1 class="title">Stuntbusters</h1>
+          <p class="subtitle">
+            A Web App designed for cheerleading athletes and coaches to quickly
+            diagnose stunt issues via a simple form. Built with Python, Django,
+            and JavaScript. On submission, the app sends automated email
+            notifications and persists entries to the database. Backend-first,
+            clean UX on top.
+          </p>
+          <div class="case-cta">
+            <a
+              class="cta"
+              href="https://stuntbusters-production.up.railway.app/"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="bi bi-globe2" aria-hidden="true"></i>
+              <span>Open Live App</span>
+            </a>
+            <a
+              class="cta"
+              href="https://www.figma.com/design/rowW4xWe3GjjLpi7RKaDNG/Stuntbusters---Mock-Up---Flow?node-id=0-1&p=f&t=nGsfM57BGySKGWmh-0"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="bi bi-easel" aria-hidden="true"></i>
+              <span>View Figma Prototype</span>
+            </a>
+          </div>
+        </header>
+
+        <!-- OVERVIEW -->
+        <section class="section" id="overview">
+          <div class="content">
+            <h2 class="label-heading">Overview</h2>
+            <p>
+              Stuntbusters streamlines how cheer athletes and coaches identify
+              issues in group stunts. A guided form captures roles (flyer, base,
+              backspot), reported symptoms, and context. Submissions are stored
+              for trend analysis and automatically emailed to coaches to prompt
+              timely action.
+            </p>
+            <h3>Challenge</h3>
+            <p>
+              In practices, diagnosing stunt failures is noisy and ad-hoc. Teams
+              need a consistent intake to capture context and speed up coaching
+              feedback.
+            </p>
+            <h3>Outcome</h3>
+            <p>
+              A lean, resilient Django app: structured inputs, clear statuses,
+              one-click submission, automated notifications, and durable storage
+              — so coaches can focus on coaching.
+            </p>
+
+            <div class="row kpis">
+              <div class="col-md-4">
+                <div class="card">
+                  <strong>Minutes → Seconds</strong><br />
+                  Faster stunt issue reporting
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <strong>Zero-touch emails</strong><br />
+                  Auto notify coaches on submit
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <strong>Structured data</strong><br />
+                  Trends by role/symptom/context
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ROLE & TIMELINE -->
+        <section class="section" id="role">
+          <div class="content">
+            <h2 class="label-heading">Role & Timeline</h2>
+            <div class="dl">
+              <div>Role</div>
+              <div>
+                Product Designer & Backend Engineer (UX flows, form logic,
+                Django models/views, email service, persistence)
+              </div>
+              <div>Timeline</div>
+              <div>
+                ~4–6 weeks (scope, build, iterate with real athletes/coaches)
+              </div>
+              <div>Tools</div>
+              <div>
+                Figma, FigJam, Django, Python, SQLite/Postgres-ready, JavaScript
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PERSONAS -->
+        <section class="section" id="personas">
+          <div class="content">
+            <h2 class="label-heading">Personas</h2>
+
+            <article class="persona">
+              <h4>Ava — Flyer, 15</h4>
+              <p>
+                <strong>Bio:</strong> Competitive cheer athlete balancing school
+                and practice.
+              </p>
+              <p>
+                <strong>Goals:</strong> Land stable libs and scales; get fast
+                feedback on technique.
+              </p>
+              <p>
+                <strong>Pain:</strong> Feedback gets lost in group chats; unsure
+                what to fix first.
+              </p>
+              <p>
+                <strong>Fit:</strong> Uses the form after reps to log wobble
+                points and receive coach tips.
+              </p>
+            </article>
+
+            <article class="persona">
+              <h4>Coach Miguel — Head Coach</h4>
+              <p>
+                <strong>Bio:</strong> Oversees multiple stunt groups; limited
+                time during practice blocks.
+              </p>
+              <p>
+                <strong>Goals:</strong> Spot patterns, prioritize drills by role
+                and failure type.
+              </p>
+              <p>
+                <strong>Pain:</strong> Ad-hoc notes; hard to compare issues
+                across groups/sessions.
+              </p>
+              <p>
+                <strong>Fit:</strong> Gets auto-emails with structured entries
+                and can filter logged issues later.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- STYLE GUIDE -->
+        <section class="section" id="style">
+          <div class="content">
+            <h2 class="label-heading">Style Guide</h2>
+            <h3>Brand & UI Tokens</h3>
+            <p>
+              Clean, energetic palette and bold headings for quick scanning;
+              high contrast for field labels and statuses.
+            </p>
+            <div class="swatches">
+              <span class="swatch" style="background: #1f2937"></span>
+              <span class="swatch" style="background: #5856d6"></span>
+              <span class="swatch" style="background: #10b981"></span>
+              <span class="swatch" style="background: #f59e0b"></span>
+              <span class="swatch" style="background: #e5e7eb"></span>
+            </div>
+            <p>
+              <strong>Type:</strong> Inter for body and UI; heavy weights for
+              section titles.
+            </p>
+          </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="section" id="process">
+          <div class="content">
+            <h2 class="label-heading">Process</h2>
+            <h3>1. Discovery</h3>
+            <ul>
+              <li>
+                Quick interviews with flyers, bases, and coaches to map failure
+                modes.
+              </li>
+              <li>
+                Audit of how feedback currently travels (verbal, notes, chats).
+              </li>
+            </ul>
+            <h3>2. Define</h3>
+            <ul>
+              <li>
+                Single form that captures: role, stunt type, symptom, context
+                (time, group), optional media.
+              </li>
+              <li>
+                Immediate email to coaches; entry saved for later analysis.
+              </li>
+            </ul>
+            <h3>3. Prototype</h3>
+            <ul>
+              <li>
+                Low-fi form → med-fi field ordering and labels → hi-fi with
+                validation hints.
+              </li>
+              <li>CTA clarity and streamlined confirmation state.</li>
+            </ul>
+            <h3>4. Test & Iterate</h3>
+            <ul>
+              <li>Reduced required fields; added role-specific hints.</li>
+              <li>
+                Improved mobile ergonomics (thumb-friendly selects, bigger tap
+                targets).
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- FINAL DESIGN -->
+        <section class="section" id="design">
+          <div class="content">
+            <h2 class="label-heading">Final Design</h2>
+            <ul>
+              <li>
+                <strong>Guided Form:</strong> Role → Stunt → Symptom → Context.
+              </li>
+              <li>
+                <strong>Instant Feedback:</strong> Clear confirmation and next
+                steps.
+              </li>
+              <li>
+                <strong>Responsive:</strong> Works smoothly on phones, tablets,
+                desktops.
+              </li>
+              <li>
+                <strong>Accessible:</strong> Labels, contrast, and clear error
+                states.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ENGINEERING -->
+        <section class="section" id="engineering">
+          <div class="content">
+            <h2 class="label-heading">Engineering</h2>
+            <p>
+              Django backend with form handling, model persistence, and email
+              delivery. JS progressive enhancement for small UX details (field
+              conditioning, success state).
+            </p>
+            <pre><code># models.py (simplified)
+class Submission(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    role = models.CharField(max_length=20, choices=[("flyer","Flyer"),("base","Base"),("backspot","Backspot")])
+    stunt = models.CharField(max_length=120)
+    symptom = models.CharField(max_length=120)
+    context = models.TextField(blank=True, default="")
+    email = models.EmailField(blank=True, null=True)  # optional contact
+
+# views.py (simplified)
+def submit_issue(request):
+    if request.method == "POST":
+        form = SubmissionForm(request.POST, request.FILES)
+        if form.is_valid():
+            sub = form.save()
+            send_mail(
+                subject=f"[Stuntbusters] {sub.role} - {sub.stunt}",
+                message=f"Symptom: {sub.symptom}\nContext: {sub.context}",
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.COACH_EMAIL],
+            )
+            return redirect("thanks")
+    else:
+        form = SubmissionForm()
+    return render(request, "submit.html", {"form": form})</code></pre>
+            <p>
+              Email uses Django's email backend (swappable for SMTP provider).
+              DB is SQLite locally, Postgres-ready in production. Forms include
+              server-side validation mirrored by lightweight client hints.
+            </p>
+          </div>
+        </section>
+
+        <!-- LEARNINGS -->
+        <section class="section" id="learnings">
+          <div class="content">
+            <h2 class="label-heading">Key Learnings</h2>
+            <ul>
+              <li>Form friction drops when labels match athlete language.</li>
+              <li>
+                Automated email creates accountability; entries don’t disappear.
+              </li>
+              <li>
+                Small mobile affordances (bigger inputs, fewer required fields)
+                boost completion.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- IMPACT -->
+        <section class="section" id="impact">
+          <div class="content">
+            <h2 class="label-heading">Impact</h2>
+            <p>
+              Consistent intake reduced time to coach feedback and improved
+              practice focus. Saved entries enable week-over-week pattern
+              spotting by stunt type and role.
+            </p>
+          </div>
+        </section>
+
+        <!-- NEXT -->
+        <section class="section" id="next">
+          <div class="content">
+            <h2 class="label-heading">What’s Next</h2>
+            <ul>
+              <li>Coach dashboard with filters and simple charts.</li>
+              <li>Optional media uploads for slow-mo review.</li>
+              <li>
+                Role-specific suggestions (rule-based to start, ML later).
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <footer>
+          © Stuntbusters Case Study — UX + Backend. Built with Django, Python,
+          JavaScript, and a few extra late nights.
+        </footer>
+      </div>
+
+      <!-- Right gutter -->
+      <div class="case-gutter"></div>
+    </main>
+
+    <a href="index.html" class="back-arrow" aria-label="Go back">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+
+    <!-- Scroll + active menu -->
+    <script>
+      const links = document.querySelectorAll(".case-menu a");
+      const sections = [...links].map((l) =>
+        document.querySelector(l.getAttribute("href"))
+      );
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              links.forEach((l) => l.classList.remove("active"));
+              const active = document.querySelector(
+                `.case-menu a[href="#${entry.target.id}"]`
+              );
+              if (active) active.classList.add("active");
+            }
+          });
+        },
+        { rootMargin: "-40% 0px -50% 0px" }
+      );
+      sections.forEach((s) => s && io.observe(s));
+
+      // Transparent → solid navbar
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector(".navbar-home");
+        if (window.scrollY > 50) nav.classList.add("scrolled");
+        else nav.classList.remove("scrolled");
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -6,26 +6,50 @@
       <title>Design Work - KA</title>
       <link rel="icon" href="./images/logo.png" />
       <meta content="Portfolio" name="description" />
-      <link rel="stylesheet" href="./stylesheets/main.scss" />
+      <link rel="stylesheet" href="./stylesheets/main.css" />
       <link rel="stylesheet" href="./folio.scss" />
       <link rel="stylesheet" href="./motion.scss" />
+      <!-- Bootstrap CSS (navbar styles/toggler icon) -->
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      />
+
+      <!-- Bootstrap Icons -->
       <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
       />
+
+      <!-- fonts -->
+      <link
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
     </head>
   </head>
   <body>
-    <nav class="navbar">
-      <a class="navbar-brand" href="index.html">
-        <img
-          class="navbar-brand-img"
-          src="./images/logo.png"
-          width="80"
-          height="80"
-          alt=""
-        />
-      </a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-home">
+      <a class="navbar-brand" href="index.html">KA</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="index.html">Portfolio</a>
+          <a class="nav-item nav-link" href="about.html">About</a>
+        </div>
+      </div>
     </nav>
 
     <main>
@@ -33,11 +57,9 @@
       <h2>Portfolio</h2>
 
       <div class="folio-medium">
-        <a class="folio-type p" href="folio.html">Print & Screen-Print</a>
-        <h2 class="folio-type">/</h2>
         <a class="folio-type p" href="motion.html">Motion & Animation</a>
         <h2 class="folio-type">/</h2>
-        <a class="folio-type p" href="designweb.html">Web Design</a>
+        <a class="folio-type p" href="folio.html">Print & Screen-Print</a>
       </div>
 
       <div class="back-to-top">
@@ -178,5 +200,13 @@
         </div>
       </div>
     </main>
+    <a href="index.html" class="back-arrow" aria-label="Go back">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+    <!-- Your script (keep type=module only if it actually uses ES modules) -->
+    <script type="module" src="./javascripts/main.js" defer></script>
+    <!-- jQuery + Bootstrap Bundle (required for Bootstrap 4 components) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

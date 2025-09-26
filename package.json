@@ -1,6 +1,6 @@
 {
   "name": "project-starter",
-  "author": "Abdulmalek Al-Gahmi",
+  "author": "Katherine Abela",
   "private": true,
   "version": "0.0.0",
   "license": "MIT",
@@ -34,3 +34,4 @@
     "bootstrap-icons": "^1.8.1"
   }
 }
+
