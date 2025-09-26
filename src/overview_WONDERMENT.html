@@ -60,7 +60,11 @@
 
     <!-- HERO -->
     <section class="hero-overview">
-      <img src="images/Wonderment 2.png" alt="WIMIA Hero" class="hero-bg" />
+      <img
+        src="images/project-hero/hero-wonder.png"
+        alt="Wonderment Hero"
+        class="hero-bg"
+      />
       <div class="hero-overlay">
         <a href="index.html" class="hero-back" aria-label="Back to portfolio">
           <i class="bi bi-arrow-left"></i>
@@ -169,10 +173,6 @@
               collaborate creatively on a global level, and make tangible
               impact—all in a safe space designed for them.
             </p>
-            <figure class="media" style="margin-top: 12px">
-              <em>Optional image:</em> place
-              <code>images/wonderment/mission.png</code> here.
-            </figure>
           </div>
         </section>
 
@@ -284,15 +284,17 @@
             <div class="media-grid">
               <figure>
                 <img
-                  src="images/wonderment/demographics-gender.png"
+                  src="images/wonder/gender-split.png"
                   alt="Gender split pie chart"
+                  class="expandable"
                 />
                 <figcaption>Gender split</figcaption>
               </figure>
               <figure>
                 <img
-                  src="images/wonderment/demographics-occupation.png"
+                  src="images/wonder/occupation.png"
                   alt="Occupation bars"
+                  class="expandable"
                 />
                 <figcaption>Occupation breakdown</figcaption>
               </figure>
@@ -320,22 +322,42 @@
             <div class="media-grid">
               <figure>
                 <img
-                  src="images/wonderment/website-options.png"
+                  src="images/wonder/web-options.png"
                   alt="Website options"
+                  class="expandable"
                 />
                 <figcaption>Website options</figcaption>
               </figure>
               <figure>
                 <img
-                  src="images/wonderment/app-options.png"
+                  src="images/wonder/app-options.png"
                   alt="App options"
+                  class="expandable"
                 />
                 <figcaption>App options</figcaption>
               </figure>
               <figure>
-                <img src="images/wonderment/paths-page.png" alt="Paths page" />
+                <img
+                  src="images/wonder/paths-page.png"
+                  alt="Paths page"
+                  class="expandable"
+                />
                 <figcaption>Paths page</figcaption>
               </figure>
+            </div>
+
+            <div class="row">
+              <div class="col-12 p-1">
+                <h3>Initial Prototype Design</h3>
+                <figure>
+                  <img
+                    src="images/wonder/low-fidelity.png"
+                    alt="Website options"
+                    class="expandable"
+                  />
+                  <figcaption>Low Fidelity Prototype</figcaption>
+                </figure>
+              </div>
             </div>
           </div>
         </section>
@@ -483,6 +505,34 @@
         const nav = document.querySelector(".navbar-home");
         if (window.scrollY > 50) nav.classList.add("scrolled");
         else nav.classList.remove("scrolled");
+      });
+
+      // Create modal dynamically
+      const modal = document.createElement("div");
+      modal.classList.add("image-modal");
+      modal.innerHTML = `
+  <span class="close-btn">&times;</span>
+  <img src="" alt="Expanded view" />
+`;
+      document.body.appendChild(modal);
+
+      const modalImg = modal.querySelector("img");
+      const closeBtn = modal.querySelector(".close-btn");
+
+      // Open modal on image click
+      document.querySelectorAll(".expandable").forEach((img) => {
+        img.addEventListener("click", () => {
+          modalImg.src = img.src;
+          modal.classList.add("show");
+        });
+      });
+
+      // Close modal
+      closeBtn.addEventListener("click", () => {
+        modal.classList.remove("show");
+      });
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) modal.classList.remove("show");
       });
     </script>
 

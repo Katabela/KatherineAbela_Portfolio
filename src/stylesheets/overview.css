@@ -576,3 +576,160 @@ footer {
   font-size: 14px;
   color: var(--muted);
 }
+
+/* -------------------------------
+   Research & IA Sections
+--------------------------------*/
+
+/* Section wrapper */
+#research,
+#ia {
+  background: var(--bg);
+  padding: 4rem 0;
+}
+
+/* Headings */
+#research .label-heading,
+#ia .label-heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  border-left: 6px solid var(--accent);
+  padding-left: 0.75rem;
+}
+
+/* Subheadings */
+#research h3,
+#ia h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--ink-dim);
+}
+
+/* Lists */
+#research ul,
+#ia ul {
+  list-style: disc;
+  margin: 0 0 1.5rem 1.5rem;
+  padding: 0;
+  color: var(--ink-dim);
+}
+
+#research li,
+#ia li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Media grids (charts, images, etc.) */
+#research .media-grid,
+#ia .media-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 860px) {
+  #research .media-grid {
+    grid-template-columns: 1fr 1fr; /* 2 charts side by side */
+  }
+
+  #ia .media-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 options */
+  }
+}
+
+#research figure,
+#ia figure {
+  margin: 0;
+  text-align: center;
+}
+
+#research img,
+#ia img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+#research figcaption,
+#ia figcaption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+/* Cards inside IA */
+#ia .card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  background: var(--card);
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(16, 24, 40, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+#ia .card strong {
+  color: var(--main-purple);
+}
+
+#ia .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(16, 24, 40, 0.12);
+}
+
+/* EXPAND IMAGES */
+/* Modal backdrop */
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2000;
+}
+
+.media-grid img:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 6px 18px rgba(0, 0, 0, 0.7);
+  transition: transform 0.2s ease;
+  cursor: zoom-in;
+}
+
+/* Show state */
+.image-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Enlarged image */
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Close button */
+.image-modal .close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.image-modal .close-btn:hover {
+  transform: scale(1.1);
+}

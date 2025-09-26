@@ -227,7 +227,6 @@ p {
 
 .section.is--about {
   background: transparent;
-  color: var(--white);
   padding: clamp(3rem, 8vw, 10%) clamp(1rem, 4vw, 10%) clamp(4rem, 10vw, 15%);
   height: 110vh;
   /* center the inner content */
@@ -247,19 +246,36 @@ p {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.5); /* tweak opacity to taste */
+  background: rgba(94, 13, 235, 0.4); /* tweak opacity to taste */
   z-index: -1; /* keep it under the content */
 }
 
-/* Ensure hero text reads on the photo */
-.section.is--about {
-  color: #fff;
+.section.headshot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  color: var(--white);
+  background: rgba(94, 13, 235, 0.1); /* tweak opacity to taste */
+  z-index: -1; /* keep it under the content */
 }
-.section.is--about .about-text h2 {
-  color: var(--dark-grey);
-} /* overrides earlier black */
-.section.is--about .underline {
-  border-top-color: #fff;
+
+.section.is--about.headshot h1,
+.section.is--about.headshot p {
+  color: var(--white) !important;
+  transform: translateY(20vh);
+}
+
+.section.is--about.headshot .tagline {
+  color: var(--white) !important;
+}
+
+.about-hero-text {
+  color: #ffffff;
+}
+
+.section.is--about .about-text h2,
+h4 {
+  color: var(--white);
 }
 
 :root {
@@ -468,7 +484,7 @@ h4 {
 }
 
 /* ===========================
-   Projects Sections
+   s Sections
    =========================== */
 
 .section.is--project {
@@ -482,7 +498,7 @@ h4 {
 
 .section.is--project-2 {
   min-height: 100vh;
-  background: var(--section-bg);
+  background: #f6f6fb;
   display: grid;
   place-items: center;
   padding: clamp(2rem, 5vw, 4rem) 1.25rem; /* breathing room on small screens */
@@ -885,49 +901,15 @@ h4 {
   fill: #5856d6; /* or var(--section-bg) / brand color */
 }
 
-.projects-header h4 {
+.projects-header h3 {
   color: var(--dark-grey);
   font-family: var(--font-heading);
-  font-weight: 600;
+  // font-weight: 600;
   font-size: 2rem;
   margin: 0;
   text-align: left; /* header in the left corner */
-  padding: 5rem 0 3rem 0;
+  padding: 3rem 0 3rem 0;
   text-align: center;
-
-  //transition scroll
-  opacity: 0.1;
-  transform: translateY(40px);
-}
-
-/* keyframes for the effect */
-@keyframes reveal-in {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* scroll-linked animation */
-@supports (animation-timeline: view()) {
-  .projects-header h4 {
-    animation: reveal-in 0.9s ease both;
-    animation-timeline: view(); /* tie to element’s view */
-    animation-range: entry 10% cover 35%; /* when to play */
-  }
-}
-
-/* accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .projects-header h4 {
-    animation: none !important;
-    opacity: 1;
-    transform: none;
-  }
 }
 
 /* One-row gallery */
