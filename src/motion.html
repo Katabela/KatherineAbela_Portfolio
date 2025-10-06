@@ -7,7 +7,8 @@
       <link rel="icon" href="./images/logo.png" />
       <meta content="Portfolio" name="description" />
       <!-- <link rel="stylesheet" href="./stylesheets/main.css" /> -->
-      <link rel="stylesheet" href="./folio.scss" />
+
+      <link rel="stylesheet" href="./folio.css" />
       <link rel="stylesheet" href="./motion.scss" />
       <!-- Bootstrap CSS (navbar styles/toggler icon) -->
       <link
@@ -53,32 +54,8 @@
     </nav>
 
     <main>
-      <h1>Motion Design</h1>
+      <h1 class="motion">Motion Design</h1>
       <h2>Portfolio</h2>
-
-      <div class="folio-medium">
-        <a class="folio-type p" href="motion.html">Motion & Animation</a>
-        <h2 class="folio-type">/</h2>
-        <a class="folio-type p" href="folio.html">Print & Screen-Print</a>
-      </div>
-
-      <div class="back-to-top">
-        <a href="#" class="chat__link w-inline-block">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            fill="currentColor"
-            class="bi bi-arrow-up"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"
-            />
-          </svg>
-        </a>
-      </div>
 
       <div class="gallery-video">
         <div class="card-video">
@@ -200,9 +177,14 @@
         </div>
       </div>
     </main>
-    <a href="index.html" class="back-arrow" aria-label="Go back">
-      <i class="bi bi-arrow-left"></i>
-    </a>
+
+    <!-- Fixed category bar -->
+    <div class="folio-medium-fixed">
+      <a class="folio-type" href="folio.html">Print & Screen-Print</a>
+      <span class="divider">/</span>
+      <a class="folio-type" href="motion.html">Motion & Animation</a>
+    </div>
+
     <!-- Your script (keep type=module only if it actually uses ES modules) -->
     <script type="module" src="./javascripts/main.js" defer></script>
     <!-- jQuery + Bootstrap Bundle (required for Bootstrap 4 components) -->

@@ -1,0 +1,175 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --grey: #555;
+}
+
+/* Body + Typography */
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+}
+
+.motion {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 5rem 0 0.5rem;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--grey);
+}
+
+/* Layout spacing */
+main {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1600px;
+}
+
+/* Portfolio item styling */
+.folio-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* Ensure Bootstrap rows align visually */
+.row {
+  margin: 20px;
+}
+
+/* Limit total row height */
+.row img {
+  max-height: 90vh; /* never exceed viewport height */
+}
+
+.folio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.folio-item:hover img {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+/* Caption styling */
+.folio-item figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--white);
+  font-size: 0.9rem;
+  padding: 0.8rem 1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.folio-item:hover figcaption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--black);
+  border-radius: 50%;
+  padding: 10px;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.back-to-top a {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top:hover {
+  background: var(--grey);
+}
+
+/* Fixed bottom category bar */
+.folio-medium-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 20;
+}
+
+.folio-medium-fixed .folio-type {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #000;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+.folio-medium-fixed .folio-type:hover {
+  color: rgb(255, 255, 255);
+}
+
+.folio-medium-fixed .divider {
+  color: #999;
+  font-weight: 400;
+}
+
+/* Add spacing so the fixed bar doesn’t overlap the last row */
+body {
+  padding-bottom: 80px; /* equals fixed bar height */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .row img {
+    max-height: none;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
