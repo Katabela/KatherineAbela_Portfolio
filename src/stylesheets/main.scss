@@ -464,12 +464,15 @@ h4 {
   }
 }
 
-.name {
+.name a {
   border-bottom: 4px dashed var(--dark-grey);
   cursor: pointer;
+  text-decoration: none; /* remove underline */
+  transition: color 0.3s ease;
 }
 
-.name:hover {
+.name a:hover {
+  color: #292929;
   border-bottom: 4px dashed var(--main-purple);
   cursor: pointer;
 }

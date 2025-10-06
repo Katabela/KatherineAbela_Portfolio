@@ -1,4 +1,5 @@
 import "../stylesheets/main.scss";
+import "../stylesheets/folio.css";
 
 let intro = document.querySelector(".intro");
 let loadSpan = document.querySelectorAll(".load");
