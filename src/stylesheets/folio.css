@@ -13,10 +13,14 @@
 }
 
 /* Body + Typography */
-body {
+.folio-pages {
   background: var(--section-bg);
   color: var(--black);
   font-family: "Montserrat", sans-serif;
+}
+
+.folio-background {
+  background: var(--section-bg);
 }
 
 .motion {

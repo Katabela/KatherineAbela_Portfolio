@@ -7,7 +7,6 @@
   /* Single source of truth for the sans stack */
   --font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
     Arial, "Apple Color Emoji", "Segoe UI Emoji";
-
   /* Use the same stack for headings and body */
   --font-heading: var(--font-sans);
   --font-body: var(--font-sans);
