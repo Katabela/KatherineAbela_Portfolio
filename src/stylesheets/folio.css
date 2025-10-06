@@ -9,11 +9,12 @@
   --black: #000;
   --white: #fff;
   --grey: #555;
+  --section-bg: #f9fafb;
 }
 
 /* Body + Typography */
 body {
-  background: var(--white);
+  background: var(--section-bg);
   color: var(--black);
   font-family: "Montserrat", sans-serif;
 }
@@ -30,13 +31,6 @@ body {
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--grey);
-}
-
-/* Layout spacing */
-main {
-  margin: 0 auto;
-  padding: 0;
-  max-width: 1600px;
 }
 
 /* Portfolio item styling */
