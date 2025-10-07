@@ -252,12 +252,12 @@ p {
 }
 
 .section.headshot::after {
-  content: "";
+  content: none;
   position: absolute;
   inset: 0;
   color: var(--white);
-  background: rgba(94, 13, 235, 0.1); /* tweak opacity to taste */
-  z-index: -1; /* keep it under the content */
+  background: rgba(94, 13, 235, 0.1);
+  z-index: -1;
 }
 
 .section.is--about.headshot h1,
