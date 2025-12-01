@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hey Dude Campaign · Kat Abela</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fonts 2-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page content-page">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-home">
+      <a class="navbar-brand" href="/index.html">KA</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="/index.html">Portfolio</a>
+          <a class="nav-item nav-link" href="/about.html">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="content-page-inner">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-left">
+            <div class="hero-tag">
+              <span class="hero-tag-dot"></span>
+              <span>Hey Dude · Campaign</span>
+            </div>
+            <h1 class="hero-title">Hey Dude Lifestyle Ad</h1>
+            <p class="hero-subtitle">
+              A personality-driven video showcasing comfort, movement, and fun
+              for the Hey Dude brand.
+            </p>
+            <p class="hero-body">
+              My goal was to create upbeat, personality-forward content that
+              would feel authentic while aligning with their brand tone: casual,
+              playful, easygoing.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETAILS -->
+      <section class="projects">
+        <h2 class="projects-title">Project Overview</h2>
+
+        <p class="projects-sub">Brand: <strong>Hey Dude</strong></p>
+        <p class="projects-sub">Content Type: Lifestyle short-form video</p>
+        <p class="projects-sub">Audience: Gen-Z & young adults</p>
+        <p class="projects-sub">Tools Used: iPhone 15 Pro, CapCut</p>
+
+        <h3 style="margin-top: 24px" class="projects-title">Strategy</h3>
+        <p>
+          I built the video around movement and quick cuts to show the comfort
+          and everyday wearability of the shoes. The tone is playful, authentic,
+          and visually energetic.
+        </p>
+
+        <h3 style="margin-top: 24px" class="projects-title">Execution</h3>
+        <ul>
+          <li>Shot multiple angles to show movement</li>
+          <li>Used trending audio to boost discoverability</li>
+          <li>Added captions and jump cuts for pacing</li>
+        </ul>
+
+        <!-- VIDEO SHOWCASE SECTION -->
+        <section class="video-section" aria-labelledby="video-heading">
+          <h3 class="projects-title">Project Videos</h3>
+          <p class="video-sub">
+            A selection of content created for this campaign. Each piece was
+            filmed, edited, and directed to match the brand tone and platform
+            style.
+          </p>
+
+          <div class="video-grid">
+            <!-- Example Video 1 -->
+            <div class="video-card">
+              <div class="video-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/VIDEO_ID"
+                  title="Project Video"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="video-caption">
+                Main promotional video used in campaign.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <h3 style="margin-top: 24px" class="projects-title">Results</h3>
+        <p>
+          Strong engagement and positive brand response. Content performed above
+          average for similar lifestyle assets.
+        </p>
+
+        <blockquote style="margin-top: 24px; opacity: 0.8">
+          “Loved this edit — super fun, so on-brand, and great energy.”
+          <br /><strong>— Hey Dude Creative Team</strong>
+        </blockquote>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <h2 class="cta-title">Let’s Build Something Great</h2>
+        <p class="cta-body">
+          If you need fun, personality-driven lifestyle content — I’ve got you
+          covered.
+        </p>
+        <a href="mailto:katherineabela@gmail.com" class="btn-primary"
+          >Get in Touch →</a
+        >
+      </section>
+
+      <footer class="footer">© <span id="year"></span> Kat Abela</footer>
+    </main>
+
+    <script>
+      // tiny helper just to keep year current (optional)
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <!-- Your script (keep type=module only if it actually uses ES modules) -->
+    <script type="module" src="./javascripts/main.js" defer></script>
+    <!-- jQuery + Bootstrap Bundle (required for Bootstrap 4 components) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script async src="//www.instagram.com/embed.js"></script>
+  </body>
+</html>
