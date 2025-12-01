@@ -1683,6 +1683,11 @@ h4 {
   border-radius: 12px;
 }
 
+.video-caption {
+  max-width: 400px;
+  padding: 0 0 10% 0;
+}
+
 /* ===========================
    Content page navbar overrides
    =========================== */
@@ -1729,6 +1734,27 @@ h4 {
   }
 }
 
+/* ===========================
+   Mobile nav - content page - "back to content"
+   =========================== */
+
+@media (max-width: 767px) {
+  .navbar-home .back-link {
+    background-color: var(--main-purple); /* your purple shade */
+    color: #fff !important;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    display: inline-block;
+  }
+
+  .navbar-home .back-link:hover {
+    background: #8c76ff; /* slightly darker on hover */
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .content-page .hero-content {
@@ -1754,7 +1780,7 @@ h4 {
 
 @media (max-width: 640px) {
   .content-page {
-    padding: 20px 14px 32px;
+    padding: 70px 14px 32px;
   }
 
   .content-page .hero {

@@ -32,7 +32,12 @@
   <body class="page content-page">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-home">
-      <a class="navbar-brand" href="index.html">KA</a>
+      <a class="navbar-brand" href="/index.html">KA</a>
+      <div class="navbar-nav">
+        <a class="nav-item nav-link back-link" href="/content.html"
+          >Back to Content</a
+        >
+      </div>
       <button
         class="navbar-toggler"
         type="button"
@@ -115,15 +120,16 @@
           <div class="video-grid">
             <!-- Example Video 1 -->
             <div class="video-card">
-              <div class="video-wrapper insta-wrapper">
-                <blockquote
-                  class="instagram-media"
-                  data-instgrm-permalink="https://www.instagram.com/reel/REEL_ID/"
-                  data-instgrm-version="14"
-                  style="margin: 0 auto"
-                ></blockquote>
+              <div class="video-wrapper">
+                <video
+                  src="/content/amazon.mp4"
+                  class="vertical-video"
+                  controls
+                  playsinline
+                  preload="metadata"
+                ></video>
               </div>
-              <p class="video-caption">Main reel created for this campaign.</p>
+              <p class="video-caption">Main content used for campaign.</p>
             </div>
           </div>
         </section>

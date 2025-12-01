@@ -33,6 +33,11 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-home">
       <a class="navbar-brand" href="/index.html">KA</a>
+      <div class="navbar-nav">
+        <a class="nav-item nav-link back-link" href="/content.html"
+          >Back to Content</a
+        >
+      </div>
       <button
         class="navbar-toggler"
         type="button"
@@ -108,17 +113,15 @@
             <!-- Example Video 1 -->
             <div class="video-card">
               <div class="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/VIDEO_ID"
-                  title="Project Video"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
+                <video
+                  src="/content/heydude.mp4"
+                  class="vertical-video"
+                  controls
+                  playsinline
+                  preload="metadata"
+                ></video>
               </div>
-              <p class="video-caption">
-                Main promotional video used in campaign.
-              </p>
+              <p class="video-caption">Main content used for campaign.</p>
             </div>
           </div>
         </section>
