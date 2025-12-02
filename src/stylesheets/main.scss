@@ -1233,7 +1233,7 @@ h4 {
 
 .content-page {
   min-height: 100vh;
-  padding: 24px 16px 40px;
+  padding: 80px 16px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1532,8 +1532,15 @@ h4 {
 
 /* PROJECT GRID */
 .content-page .projects {
+  margin: auto;
   margin-top: 32px;
   padding: 5%;
+  max-width: 1000px;
+}
+
+.projects p,
+li {
+  color: var(--content-bg-alt);
 }
 
 .content-page .projects-header {
@@ -1554,7 +1561,7 @@ h4 {
 
 .content-page .projects-sub {
   font-size: 0.9rem;
-  color: var(--content-muted);
+  color: var(--content-card-bg);
   max-width: 420px;
 }
 
@@ -1809,22 +1816,22 @@ h4 {
    =========================== */
 
 /* Brand + links in black on white bg */
-.content-page .navbar-home .navbar-brand,
-.content-page .navbar-home .navbar-nav .nav-link {
-  color: var(--white) !important;
-}
+// .content-page .navbar-home .navbar-brand,
+// .content-page .navbar-home .navbar-nav .nav-link {
+//   color: var(--white) !important;
+// }
 
-/* Keep the underline hover/active behaviour you already have */
-.content-page .navbar-home .navbar-nav .nav-link:hover,
-.content-page .navbar-home .navbar-nav .nav-link:focus,
-.content-page .navbar-home .navbar-nav .nav-link.active,
-.content-page .navbar-home .navbar-nav .nav-link[aria-current="page"],
-.content-page .navbar-home .navbar-nav .nav-link.is-current {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-  text-decoration-thickness: 2px;
-  color: var(--white) !important;
-}
+// /* Keep the underline hover/active behaviour you already have */
+// .content-page .navbar-home .navbar-nav .nav-link:hover,
+// .content-page .navbar-home .navbar-nav .nav-link:focus,
+// .content-page .navbar-home .navbar-nav .nav-link.active,
+// .content-page .navbar-home .navbar-nav .nav-link[aria-current="page"],
+// .content-page .navbar-home .navbar-nav .nav-link.is-current {
+//   text-decoration: underline;
+//   text-underline-offset: 0.2em;
+//   text-decoration-thickness: 2px;
+//   color: var(--white) !important;
+// }
 
 /* ===========================
    Mobile expanded nav — black bg
