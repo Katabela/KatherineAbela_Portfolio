@@ -1105,6 +1105,62 @@ h4 {
   }
 }
 
+/* ==========================================
+   VERTICAL VARIANT OF MEDIA STACK (9:16)
+   ========================================== */
+
+.media-stack--vertical {
+  aspect-ratio: 9 / 16; /* phone vertical */
+  width: min(300px, 100%); /* tighter width suitable for vertical video */
+}
+
+/* Override sizes inside vertical version */
+.media-stack--vertical > img,
+.media-stack--vertical > video,
+.media-stack--vertical > iframe {
+  height: 100%;
+  width: auto; /* prevent stretching */
+  object-fit: cover;
+}
+
+/* Adjust widths for the three stacked items */
+.media-stack--vertical .media-stack__center {
+  width: 90%;
+}
+
+.media-stack--vertical .media-stack__left,
+.media-stack--vertical .media-stack__right {
+  width: 78%;
+}
+
+/* Adjust the fan-out offsets for a tall portrait shape */
+.media-stack--vertical {
+  --stack-rotate: 3deg;
+  --stack-shift: 8%;
+}
+
+/* Hover fan-out still works but looks proportional */
+.media-stack--vertical:hover .media-stack__left,
+.media-stack--vertical:focus-within .media-stack__left {
+  transform: translateX(calc(-1.4 * var(--stack-shift)))
+    rotate(calc(-1 * var(--stack-rotate)));
+}
+
+.media-stack--vertical:hover .media-stack__right,
+.media-stack--vertical:focus-within .media-stack__right {
+  transform: translateX(calc(1.4 * var(--stack-shift)))
+    rotate(var(--stack-rotate));
+}
+
+/* Mobile tweaks for vertical stack */
+@media (max-width: 600px) {
+  .media-stack--vertical {
+    width: min(300px, 100%);
+    --stack-rotate: 2deg;
+    --stack-shift: 5%;
+  }
+}
+
 //ABOUT SECTION
 
 .about-content {
