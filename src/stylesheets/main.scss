@@ -1237,12 +1237,13 @@ h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: var(--section-bg);
   /* purple hero-ish background using main purple */
-  background: radial-gradient(
-    circle at top,
-    rgba(88, 86, 214, 0.45) 0,
-    #050021 55%
-  );
+  // background: radial-gradient(
+  //   circle at top,
+  //   rgba(88, 86, 214, 0.45) 0,
+  //   #050021 55%
+  // );
   color: var(--content-text);
 }
 
@@ -1488,8 +1489,8 @@ h4 {
   border: 1px solid rgba(255, 255, 255, 0.06);
   font-size: 0.75rem;
   text-align: center;
-  color: var(--content-muted);
-  background: rgba(18, 18, 40, 0.95);
+  color: var(--white);
+  background: var(--content-accent);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1503,7 +1504,7 @@ h4 {
   border: 1px solid rgba(255, 255, 255, 0.06);
   background: linear-gradient(
     90deg,
-    rgba(88, 86, 214, 0.12),
+    rgba(88, 86, 214, 0.95),
     rgba(9, 9, 24, 0.98)
   );
   display: flex;
@@ -1547,7 +1548,7 @@ h4 {
 .content-page .projects-title {
   font-size: 2rem;
   font-weight: 600;
-  color: var(--white);
+  color: var(--content-bg);
   padding: 1.2% 0 1.2% 0;
 }
 
@@ -1564,7 +1565,7 @@ h4 {
 }
 
 .content-page .project-card {
-  background: var(--content-card-bg);
+  background: var(--main-purple);
   border-radius: var(--content-radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.06);
   padding: 14px 14px 16px;
@@ -1619,6 +1620,61 @@ h4 {
   color: var(--content-muted);
 }
 
+/* -----------------------------
+   VIDEO THUMBNAIL VARIANT
+------------------------------ */
+
+.project-thumb--video {
+  position: relative;
+  overflow: hidden;
+  border-radius: inherit; /* uses your existing card rounding */
+}
+
+/* Make the video fill the thumb just like a BG image */
+.project-thumb--video video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 0;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+/* Text overlay */
+.project-thumb__label {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  /* Center text vertically or let it sit at the bottom */
+
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+
+  /* Gradient for readability */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+/* Card hover enhances video */
+.project-card:hover .project-thumb--video video {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
 .content-page .project-pill-row {
   display: flex;
   flex-wrap: wrap;
@@ -1646,7 +1702,7 @@ h4 {
   gap: 10px;
   align-items: center;
   font-size: 0.78rem;
-  color: var(--content-muted);
+  color: var(--white);
 }
 
 .content-page .project-link {
@@ -1655,6 +1711,10 @@ h4 {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  color: var(--content-bg);
+}
+
+.project-card:hover .project-link {
   color: var(--main-purple);
 }
 
@@ -1665,7 +1725,7 @@ h4 {
   border-radius: var(--content-radius-xl);
   background: linear-gradient(
     135deg,
-    rgba(88, 86, 214, 0.22),
+    rgba(88, 86, 214, 0.95),
     rgba(9, 9, 24, 0.98)
   );
   border: 1px solid rgba(88, 86, 214, 0.75);
